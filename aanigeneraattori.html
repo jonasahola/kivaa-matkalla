@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Kivaa matkalla · ElevenLabs-äänityökalu</title>
+<style>
+:root{--red:#CB043E;--red-d:#96002d;--ink:#33333a;--paper:#fdfaf3;--line:#e3ddd0;--ok:#2e7d43;--err:#b3261e}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--paper);color:var(--ink);
+  padding:20px 18px calc(30px + env(safe-area-inset-bottom));max-width:560px;margin-inline:auto}
+h1{font-size:21px;margin:6px 0 2px}
+h1 span{color:var(--red)}
+.sub{color:#77716a;font-size:13.5px;margin-bottom:20px;line-height:1.5}
+label{display:block;font-weight:700;font-size:13px;margin:16px 0 6px}
+input[type=text],input[type=password]{width:100%;border:2.5px solid var(--ink);border-radius:12px;padding:12px 13px;
+  font-size:16px;font-family:inherit;background:#fff}
+input:focus{outline:none;border-color:var(--red)}
+.filebox{border:2.5px dashed var(--ink);border-radius:14px;padding:16px;text-align:center;background:#fff;
+  font-weight:600;font-size:14px;color:#77716a}
+.filebox.ready{border-style:solid;border-color:var(--ok);color:var(--ok)}
+input[type=file]{width:100%;margin-top:8px}
+.go{margin-top:22px;width:100%;border:3px solid var(--red-d);background:var(--red);color:#fff;font-weight:800;
+  font-size:17px;padding:16px;border-radius:15px;cursor:pointer;box-shadow:0 6px 0 var(--red-d);font-family:inherit}
+.go:active{transform:translateY(4px);box-shadow:0 2px 0 var(--red-d)}
+.go:disabled{opacity:.45;box-shadow:none;transform:none}
+.log{margin-top:20px;background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px 14px;
+  font-size:13.5px;line-height:2;display:none}
+.log.show{display:block}
+.log .ok{color:var(--ok);font-weight:700}
+.log .err{color:var(--err);font-weight:700}
+.log button{border:1.5px solid var(--ink);background:#fff;border-radius:20px;padding:2px 10px;font-size:12px;
+  font-family:inherit;margin-left:8px;cursor:pointer}
+.dl{display:none;margin-top:18px;width:100%;text-align:center;border:3px solid #1f5c31;background:var(--ok);color:#fff;
+  font-weight:800;font-size:17px;padding:16px;border-radius:15px;text-decoration:none;box-shadow:0 6px 0 #1f5c31}
+.dl.show{display:block}
+.note{font-size:12.5px;color:#77716a;margin-top:14px;line-height:1.6;background:#f4efe2;border-radius:10px;padding:10px 12px}
+.note b{color:var(--red)}
+</style>
+</head>
+<body>
+<h1>🚚 Kivaa matkalla · <span>ElevenLabs-äänet</span></h1>
+<p class="sub">Generoi laadukkaat peliäänet ja suomenkieliset huudahdukset suoraan puhelimella. Avain kulkee vain selaimestasi ElevenLabsille — ei minnekään muualle.</p>
+
+<label>ElevenLabs API-avain</label>
+<input type="password" id="key" placeholder="sk_..." autocomplete="off">
+
+<label>Voice ID (huudahdukset · valinnainen)</label>
+<input type="text" id="voice" value="XB0fDUnXU5powFXDhCwa" autocomplete="off">
+
+<label>Pelitiedosto (index.html / kivaa-matkalla-ahola.html)</label>
+<div class="filebox" id="fbox">Valitse tiedosto Tiedostot-apista
+  <input type="file" id="file" accept=".html,text/html">
+</div>
+
+<button class="go" id="go" disabled>🎧 Generoi ja upota äänet</button>
+<div class="log" id="log"></div>
+<a class="dl" id="dl" download="index.html">⬇️ Lataa valmis index.html</a>
+<p class="note">Vinkki: lataus menee Tiedostot-appiin. Sieltä voit jakaa sen WhatsAppilla tai viedä Macille julkaisua varten. <b>Poista API-avain käytön jälkeen</b> ElevenLabsin asetuksista jos jaoit sen jostain.</p>
+
+<script>
+'use strict';
+const API='https://api.elevenlabs.io/v1';
+const SFX={
+  honk:   {prompt:'Friendly cartoon truck horn, two cheerful beeps, toy-like, short',dur:1.5},
+  stamp:  {prompt:'Rubber stamp thunk on paper, single hit, satisfying, short',dur:0.6},
+  stamp2: {prompt:'Rubber stamp thunk with a small magical sparkle chime, short',dur:0.9},
+  undo:   {prompt:'Soft descending boop, playful UI cancel sound, very short',dur:0.5},
+  swap:   {prompt:'Quick playful card shuffle flick, two notes up, very short',dur:0.6},
+  fanfare:{prompt:'Short happy toy trumpet fanfare, celebration, bright, 1.5 seconds',dur:1.8},
+  click:  {prompt:'Soft wooden UI tap, single subtle tick, gentle, very short',dur:0.4},
+  tab:    {prompt:'Quick playful page flip whoosh, light paper flick, very short',dur:0.5},
+  sheet:  {prompt:'Soft paper sliding upward, gentle whoosh, short',dur:0.7},
+  engine: {prompt:'Cute cartoon truck engine starting and revving up happily, playful brumm brumm, toy-like',dur:1.6},
+  finish: {prompt:'Race finish whistle with tiny crowd cheer, playful and bright, short',dur:1.4},
+  deal:   {prompt:'Playing cards dealt quickly onto a table, three crisp snaps, short',dur:0.8}
+};
+const VOICES={bingo:'Bingo!',ahola:'Aholan auto!',taysi:'Täysi kortti! Mahtavaa!',lahdetaan:'Lähdetään!'};
+const MARKER='let EL_SOUNDS=null;/*ELEVENLABS_SOUNDS*/';
+
+const $=id=>document.getElementById(id);
+let gameHtml=null;
+
+$('file').addEventListener('change',async e=>{
+  const f=e.target.files[0]; if(!f)return;
+  gameHtml=await f.text();
+  const ok=gameHtml.includes(MARKER);
+  $('fbox').classList.toggle('ready',ok);
+  $('fbox').firstChild.textContent = ok ? '✓ '+f.name+' — merkki löytyi' : '✗ '+f.name+' — tämä ei ole oikea pelitiedosto';
+  if(!ok)gameHtml=null;
+  sync();
+});
+$('key').addEventListener('input',sync);
+function sync(){ $('go').disabled = !(gameHtml && $('key').value.trim().length>10); }
+
+function line(html,cls=''){
+  const l=$('log'); l.classList.add('show');
+  const d=document.createElement('div'); if(cls)d.className=cls; d.innerHTML=html;
+  l.appendChild(d); return d;
+}
+const toDataURL=blob=>new Promise(res=>{const r=new FileReader();r.onload=()=>res(r.result);r.readAsDataURL(blob);});
+
+async function gen(url,body,key){
+  const r=await fetch(url,{method:'POST',headers:{'xi-api-key':key,'Content-Type':'application/json'},body:JSON.stringify(body)});
+  if(!r.ok)throw new Error(r.status+' '+(await r.text()).slice(0,140));
+  const blob=new Blob([await r.arrayBuffer()],{type:'audio/mpeg'});
+  return toDataURL(blob);
+}
+function preview(row,dataUrl){
+  const b=document.createElement('button');b.textContent='▶︎';
+  b.onclick=()=>{new Audio(dataUrl).play().catch(()=>{})};
+  row.appendChild(b);
+}
+
+$('go').addEventListener('click',async()=>{
+  const key=$('key').value.trim(), voice=$('voice').value.trim()||'XB0fDUnXU5powFXDhCwa';
+  $('go').disabled=true; $('log').innerHTML=''; $('dl').classList.remove('show');
+  const sounds={}; let fail=0;
+
+  for(const [name,cfg] of Object.entries(SFX)){
+    const row=line('🔊 '+name+' …');
+    try{
+      sounds[name]=await gen(API+'/sound-generation',{text:cfg.prompt,duration_seconds:cfg.dur,prompt_influence:0.6},key);
+      row.innerHTML='🔊 '+name+' <span class="ok">✓</span>'; preview(row,sounds[name]);
+    }catch(e){ fail++; row.innerHTML='🔊 '+name+' <span class="err">✗ '+e.message+'</span>'; }
+  }
+  for(const [name,text] of Object.entries(VOICES)){
+    const row=line('🗣 „'+text+'" …');
+    try{
+      sounds['say_'+name]=await gen(API+'/text-to-speech/'+voice+'?output_format=mp3_22050_32',
+        {text,model_id:'eleven_multilingual_v2',voice_settings:{stability:0.45,similarity_boost:0.8,style:0.6}},key);
+      row.innerHTML='🗣 „'+text+'" <span class="ok">✓</span>'; preview(row,sounds['say_'+name]);
+    }catch(e){ fail++; row.innerHTML='🗣 „'+text+'" <span class="err">✗ '+e.message+'</span>'; }
+  }
+
+  if(Object.keys(sounds).length===0){
+    line('Kaikki epäonnistui — tarkista avain (ja että tilillä on krediittiä).','err');
+    $('go').disabled=false; return;
+  }
+
+  let out=gameHtml.replace(MARKER,'let EL_SOUNDS='+JSON.stringify(sounds)+';/*ELEVENLABS_SOUNDS*/');
+  const speakMap=[
+    ["sfx.speak('Aholan auto!')","say_ahola"],
+    ["sfx.speak('Lähdetään!')","say_lahdetaan"],
+    ['sfx.speak("Bingo!")',"say_bingo"],
+    ['sfx.speak("Täysi kortti! Mahtavaa!")',"say_taysi"]
+  ];
+  for(const [call,k] of speakMap){
+    if(sounds[k]&&out.includes(call))
+      out=out.split(call).join('(EL_SOUNDS&&EL_SOUNDS.'+k+'?new Audio(EL_SOUNDS.'+k+').play().catch(()=>{}):'+call+')');
+  }
+
+  const blob=new Blob([out],{type:'text/html'});
+  $('dl').href=URL.createObjectURL(blob);
+  line('—');
+  line((fail? '⚠️ '+fail+' ääntä jäi synth-varalle, loput upotettu.':'🎉 Kaikki '+Object.keys(sounds).length+' ääntä upotettu!')
+    +' Tiedoston koko: '+(out.length/1024).toFixed(0)+' kt.','ok');
+  $('dl').classList.add('show');
+  $('go').disabled=false;
+});
+</script>
+</body>
+</html>
