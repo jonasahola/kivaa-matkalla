@@ -43,7 +43,8 @@ input[type=file]{width:100%;margin-top:8px}
 <p class="sub">Generoi laadukkaat peliäänet ja suomenkieliset huudahdukset suoraan puhelimella. Avain kulkee vain selaimestasi ElevenLabsille — ei minnekään muualle.</p>
 
 <label>ElevenLabs API-avain</label>
-<input type="password" id="key" placeholder="sk_..." autocomplete="off">
+<input type="text" id="key" placeholder="sk_..." autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" inputmode="text">
+<p class="note" style="margin-top:6px">Kopioi <b>koko</b> avain: elevenlabs.io → profiilikuvake → API Keys. Alkaa yleensä <b>sk_</b>. Avain testataan ennen generointia.</p>
 
 <label>Voice ID (huudahdukset · valinnainen)</label>
 <input type="text" id="voice" value="XB0fDUnXU5powFXDhCwa" autocomplete="off">
@@ -91,7 +92,7 @@ $('file').addEventListener('change',async e=>{
   sync();
 });
 $('key').addEventListener('input',sync);
-function sync(){ $('go').disabled = !(gameHtml && $('key').value.trim().length>10); }
+function sync(){ $('go').disabled = !(gameHtml && $('key').value.replace(/\s+/g,'').length>10); }
 
 function line(html,cls=''){
   const l=$('log'); l.classList.add('show');
@@ -113,8 +114,22 @@ function preview(row,dataUrl){
 }
 
 $('go').addEventListener('click',async()=>{
-  const key=$('key').value.trim(), voice=$('voice').value.trim()||'XB0fDUnXU5powFXDhCwa';
+  const key=$('key').value.replace(/\s+/g,''), voice=$('voice').value.trim()||'XB0fDUnXU5powFXDhCwa';
   $('go').disabled=true; $('log').innerHTML=''; $('dl').classList.remove('show');
+
+  // testaa avain ensin
+  const chk=line('🔑 Testataan avain …');
+  try{
+    const r=await fetch(API+'/user',{headers:{'xi-api-key':key}});
+    if(!r.ok)throw new Error(r.status);
+    const u=await r.json();
+    chk.innerHTML='🔑 Avain OK <span class="ok">✓</span> ('+(u.subscription?u.subscription.tier:'tili')+' · '
+      +(u.subscription?u.subscription.character_count+'/'+u.subscription.character_limit+' merkkiä käytetty':'')+')';
+  }catch(e){
+    chk.innerHTML='🔑 <span class="err">Avain hylättiin ('+e.message+'). Kopioi koko avain uudelleen ElevenLabsista — ja varmista ettei iOS:n automaattitäyttö vaihtanut sitä.</span>';
+    $('go').disabled=false; return;
+  }
+
   const sounds={}; let fail=0;
 
   for(const [name,cfg] of Object.entries(SFX)){
