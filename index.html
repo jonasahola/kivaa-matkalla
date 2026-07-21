@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Kivaa matkalla">
+<meta name="theme-color" content="#8ecbe8">
+<title>Kivaa matkalla · Aholan versio</title>
+<meta property="og:title" content="Kivaa matkalla 🚚 – Aholan bongauspeli">
+<meta property="og:description" content="Bongauspeli koko perheelle automatkoille. Bongaa Aholan autoja, erikoiskuljetuksia ja hirviä – kerää bingoja!">
+<meta property="og:type" content="website">
+<meta name="description" content="Bongauspeli koko perheelle automatkoille – Aholan versio.">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23CB043E'/%3E%3Crect x='4' y='11' width='16' height='11' rx='2' fill='%23fff'/%3E%3Cpath d='M20 14h5l3 4v4h-8z' fill='%23fff'/%3E%3Ccircle cx='9' cy='23' r='3' fill='%2326262c'/%3E%3Ccircle cx='24' cy='23' r='3' fill='%2326262c'/%3E%3C/svg%3E">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Caveat:wght@700&display=swap');
+
+/* ═══════════════════ TOKENS ═══════════════════ */
+:root{
+  --red:#CB043E; --red-dark:#96002d; --red-glow:#ff2f6b; --red-soft:#ffe9ef;
+  --ink:#33333a; --ink-2:#5b5b64; --grey:#8a8a92; --hairline:rgba(60,60,70,.14);
+  --paper:#fdfaf3; --card:#ffffff; --cream:#f6f1e4;
+  --sky1:#8ecbe8; --sky2:#d8effc; --sea:#5eb2d8; --sea2:#4aa2cc;
+  --gold:#f2c200; --grass:#7fbf6a; --grass2:#5f9c4e;
+  --r-s:10px; --r-m:14px; --r-l:18px; --r-xl:24px;
+  --sh-1:0 1px 2px rgba(40,40,60,.08),0 2px 8px rgba(40,40,60,.06);
+  --sh-2:0 4px 14px rgba(40,40,60,.14);
+  --sh-3:0 12px 34px rgba(40,40,60,.22);
+  --press:2px 3px 0 rgba(40,40,60,.18);
+  --sat:env(safe-area-inset-top,0px); --sab:env(safe-area-inset-bottom,0px);
+  --font-ui:-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+  --font-display:'Alfa Slab One',ui-serif,serif;
+  --font-hand:'Caveat',cursive;
+  --tabbar-h:64px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;margin:0;padding:0}
+html{height:100%}
+body{
+  height:100%;font-family:var(--font-ui);color:var(--ink);background:#0b2a3d;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  overscroll-behavior:none;position:fixed;inset:0;overflow:hidden;width:100%;
+}
+button,input{font-family:inherit;color:inherit}
+button{touch-action:manipulation;-webkit-user-select:none;user-select:none;cursor:pointer;border:none;background:none}
+:focus{outline:none}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px;border-radius:6px}
+
+/* ═══════════════════ APP SHELL ═══════════════════ */
+.app{
+  height:100vh;height:100dvh;max-width:560px;margin:0 auto;
+  display:flex;flex-direction:column;background:var(--paper);
+  box-shadow:0 0 80px rgba(0,20,40,.5);position:relative;overflow:hidden;
+}
+
+/* ═══════════════════ HERO SCENE ═══════════════════ */
+.hero{
+  position:relative;flex:0 0 auto;height:206px;overflow:hidden;
+  --skyA:#8ecbe8; --skyB:#d8effc; --seaA:#5eb2d8; --seaB:#4aa2cc;
+  --roadC:#4c4c52; --grassC:#7fbf6a; --grassC2:#5f9c4e; --bandFx:none;
+  background:linear-gradient(180deg,var(--skyA) 0%,var(--skyB) 100%);
+  padding-top:var(--sat);
+  transition:height .5s cubic-bezier(.32,.9,.35,1), background 2.5s ease;
+  -webkit-user-select:none;user-select:none;
+}
+/* ── vuorokaudenajat ── */
+[data-phase="dusk"] .hero{--skyA:#f08a5a;--skyB:#ffd9a0;--seaA:#d97a4a;--seaB:#b45f3e;--grassC:#639454;--grassC2:#4d7a42;--bandFx:brightness(.82) saturate(.92)}
+[data-phase="night"] .hero{--skyA:#0d1b38;--skyB:#26375f;--seaA:#16304e;--seaB:#0e2340;--roadC:#31313a;--grassC:#2f4a34;--grassC2:#25392a;--bandFx:brightness(.42) saturate(.7)}
+[data-phase="dawn"] .hero{--skyA:#e8a2b8;--skyB:#ffe7cf;--seaA:#8aa8c9;--seaB:#6d8fb2;--grassC:#6faa5f;--grassC2:#588c4b;--bandFx:brightness(.9)}
+.forestband,.hills{filter:var(--bandFx);transition:filter 2.5s ease}
+.sun{transition:opacity 1.5s,background 2.5s,box-shadow 2.5s}
+[data-phase="dusk"] .sun,[data-phase="dawn"] .sun{background:radial-gradient(circle at 35% 35%,#ffe9c9,#ff9440 72%);box-shadow:0 0 46px 16px rgba(255,150,60,.55)}
+[data-phase="night"] .sun{opacity:0 !important}
+.moon{position:absolute;top:calc(18px + var(--sat));right:30px;width:34px;height:34px;border-radius:50%;
+  background:radial-gradient(circle at 62% 38%,#fffdf2,#e8e4d2 68%);
+  box-shadow:0 0 28px 8px rgba(240,240,255,.35), inset -7px -5px 0 rgba(160,160,140,.35);
+  opacity:0;transition:opacity 1.5s;pointer-events:none}
+[data-phase="night"] .moon{opacity:1}
+.stars{position:absolute;inset:0 0 118px 0;opacity:0;transition:opacity 2s;pointer-events:none;
+  background-image:
+    radial-gradient(1.5px 1.5px at 12% 22%,#fff,transparent),
+    radial-gradient(1px 1px at 28% 46%,#fff,transparent),
+    radial-gradient(1.6px 1.6px at 41% 15%,#fff,transparent),
+    radial-gradient(1px 1px at 55% 38%,#fff,transparent),
+    radial-gradient(1.4px 1.4px at 66% 20%,#fff,transparent),
+    radial-gradient(1px 1px at 78% 44%,#fff,transparent),
+    radial-gradient(1.7px 1.7px at 88% 14%,#fff,transparent),
+    radial-gradient(1px 1px at 6% 52%,#fff,transparent),
+    radial-gradient(1.2px 1.2px at 47% 55%,#fff,transparent),
+    radial-gradient(1.3px 1.3px at 94% 40%,#fff,transparent);
+  animation:twinkle 3.6s ease-in-out infinite}
+[data-phase="night"] .stars{opacity:.95}
+@keyframes twinkle{50%{opacity:.55}}
+[data-phase="night"] .cloud{opacity:.22 !important}
+[data-phase="night"] .gull{opacity:0}
+.skytoggle{position:absolute;top:calc(8px + var(--sat));right:16px;width:58px;height:58px;z-index:4;
+  border-radius:50%;background:transparent}
+.app.ingame .skytoggle{display:none}
+.app.ingame .hero{height:calc(112px + var(--sat))}
+.sun{position:absolute;top:calc(16px + var(--sat));right:26px;width:42px;height:42px;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#fff8d8,#ffd94d 72%);
+  box-shadow:0 0 42px 14px rgba(255,220,90,.5);transition:opacity .3s;
+  animation:sunpulse 6s ease-in-out infinite}
+@keyframes sunpulse{50%{box-shadow:0 0 58px 20px rgba(255,220,90,.65)}}
+.cloud{position:absolute;background:#fff;border-radius:40px;
+  filter:drop-shadow(0 4px 6px rgba(90,140,180,.22));transition:opacity .3s}
+.cloud::before,.cloud::after{content:"";position:absolute;background:#fff;border-radius:50%}
+.c1{width:76px;height:22px;top:calc(26px + var(--sat));left:-96px;animation:drift 36s linear infinite}
+.c1::before{width:32px;height:32px;top:-15px;left:12px}.c1::after{width:22px;height:22px;top:-9px;left:40px}
+.c2{width:52px;height:16px;top:calc(60px + var(--sat));left:-70px;opacity:.85;animation:drift 48s linear 9s infinite}
+.c2::before{width:22px;height:22px;top:-10px;left:9px}.c2::after{width:15px;height:15px;top:-7px;left:29px}
+@keyframes drift{to{transform:translateX(720px)}}
+.gull{position:absolute;top:calc(46px + var(--sat));left:22%;font-size:15px;color:#4d5f6d;
+  transition:opacity .3s;animation:gull 9s ease-in-out infinite}
+.gull+.gull{animation-delay:3.5s;top:calc(66px + var(--sat));left:55%;font-size:11px}
+@keyframes gull{0%,100%{transform:translate(0,0)}50%{transform:translate(28px,-11px)}}
+.app.ingame :is(.sun,.cloud,.gull){opacity:0}
+/* landscape bands — anchored to bottom so shrinking crops the sky */
+.sea{position:absolute;left:0;right:0;bottom:62px;height:30px;transition:background 2.5s ease;
+  background:linear-gradient(180deg,var(--seaA) 0%,var(--seaB) 100%)}
+.sea::after{content:"";position:absolute;inset:0;opacity:.55;
+  background:repeating-linear-gradient(90deg,transparent 0 26px,rgba(255,255,255,.4) 26px 34px);
+  animation:waves 6s linear infinite}
+@keyframes waves{to{background-position:120px 0}}
+.hills{position:absolute;left:0;right:0;bottom:112px;height:34px;
+  background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='34' viewBox='0 0 240 34'><path d='M0 34 Q30 6 62 22 Q88 34 120 18 Q158 2 190 20 Q214 32 240 24 V34 Z' fill='%23a9c8b0'/><path d='M0 34 Q46 16 92 28 Q140 38 188 26 Q216 20 240 30 V34 Z' fill='%2392b89b'/></svg>") repeat-x bottom / 240px 34px;
+  animation:hillscroll 60s linear infinite}
+@keyframes hillscroll{to{background-position:-240px bottom}}
+.props{position:absolute;left:0;right:0;bottom:57px;height:26px;pointer-events:none;
+  background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='26' viewBox='0 0 300 26'><rect x='14' y='6' width='4' height='20' fill='%23fff' stroke='%2333333a'/><rect x='13' y='4' width='6' height='6' fill='%23CB043E'/><circle cx='58' cy='22' r='3' fill='%23e5679a'/><circle cx='64' cy='23' r='2.6' fill='%23f2c200'/><rect x='108' y='8' width='16' height='11' rx='2' fill='%232b7fc4' stroke='%2333333a' stroke-width='1.6'/><rect x='114' y='19' width='3' height='7' fill='%238a8a92'/><ellipse cx='176' cy='24' rx='9' ry='3.5' fill='%239aa0a6'/><rect x='236' y='10' width='7' height='9' rx='1.5' fill='%23CB043E' stroke='%2333333a' stroke-width='1.4'/><rect x='238.5' y='19' width='2.4' height='7' fill='%2333333a'/></svg>") repeat-x bottom / 300px 26px;
+  animation:propscroll 11s linear infinite}
+@keyframes propscroll{to{background-position:-300px bottom}}
+.oncar{position:absolute;bottom:34px;left:110%;width:52px;z-index:2;
+  animation:oncome 3.4s linear forwards;pointer-events:none}
+@keyframes oncome{to{left:-70px}}
+.oncar svg{width:100%;display:block;filter:drop-shadow(0 3px 3px rgba(0,0,0,.3));transform:scale(.62);transform-origin:bottom}
+[data-phase="night"] .oncar .lamp,[data-phase="dusk"] .oncar .lamp{opacity:1}
+.oncar .lamp{opacity:0}
+.forestband{position:absolute;left:0;right:0;bottom:92px;height:32px;
+  background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='72' height='32' viewBox='0 0 72 32'><path d='M14 32V27' stroke='%232f5d3a' stroke-width='4'/><path d='M14 1 L24 14 H19 L27 25 H1 L9 14 H4 Z' fill='%233e7d4d'/><path d='M48 32V28' stroke='%232f5d3a' stroke-width='3'/><path d='M48 8 L56 18 H52 L58 26 H38 L44 18 H40 Z' fill='%23356e42'/></svg>") repeat-x bottom / 72px 32px}
+.grassedge{position:absolute;left:0;right:0;bottom:54px;height:8px;background:var(--grassC);
+  border-bottom:3px solid var(--grassC2);transition:background 2.5s,border-color 2.5s}
+.roadband{position:absolute;left:0;right:0;bottom:0;height:54px;background:var(--roadC);transition:background 2.5s}
+.roadband::before{content:"";position:absolute;top:46%;left:0;right:0;height:5px;
+  background:repeating-linear-gradient(90deg,#ffd94d 0 30px,transparent 30px 60px);
+  animation:roadmove 1.05s linear infinite}
+@keyframes roadmove{to{background-position:-60px 0}}
+/* the driving truck */
+.truck{position:absolute;bottom:6px;left:-200px;width:176px;z-index:3;
+  animation:drive 13s cubic-bezier(.35,.02,.66,.98) infinite;will-change:left}
+@keyframes drive{0%{left:-200px}46%{left:calc(50% - 88px)}56%{left:calc(50% - 88px)}100%{left:112%}}
+.truck svg{width:100%;display:block;overflow:visible;filter:drop-shadow(0 5px 4px rgba(0,0,0,.32))}
+.eye{transform-box:fill-box;transform-origin:center;animation:blink 5.2s ease-in-out infinite}
+.eye.e2{animation-delay:.06s}
+@keyframes blink{0%,91%,100%{transform:scaleY(1)}94%{transform:scaleY(.08)}97%{transform:scaleY(1)}}
+.pupil{transform:translate(var(--lx,0px),var(--ly,0px));transition:transform .45s ease}
+.mouth-o{display:none}
+.truck.boost .eye{animation:none;transform:scale(1.18)}
+.truck.boost .mouth-s{display:none}
+.truck.boost .mouth-o{display:block}
+.truck .beam{opacity:0;transition:opacity 1.2s}
+[data-phase="night"] .truck .beam,[data-phase="dusk"] .truck .beam{opacity:.9}
+[data-phase="night"] .truck .cabwin{fill:#ffd98a}
+.puff{position:absolute;width:9px;height:9px;border-radius:50%;background:rgba(200,200,205,.85);
+  pointer-events:none;animation:puffup 1.1s ease-out forwards;z-index:4}
+@keyframes puffup{to{transform:translate(-14px,-26px) scale(2.6);opacity:0}}
+.truck .wheel{transform-origin:center;transform-box:fill-box;animation:spin .9s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.truck .honk{position:absolute;top:-30px;right:2px;background:#fff;border:2.5px solid var(--ink);
+  border-radius:14px;padding:2px 10px;font-family:var(--font-hand);font-weight:700;font-size:17px;
+  color:var(--red);opacity:0;transform:scale(.4);transform-origin:bottom right;white-space:nowrap;
+  box-shadow:2px 3px 0 rgba(40,40,60,.25);transition:.2s}
+.truck .honk::after{content:"";position:absolute;bottom:-8px;right:16px;border:5px solid transparent;
+  border-top-color:var(--ink)}
+.truck.boost{animation-duration:6.5s}
+.truck.boost .honk{opacity:1;transform:scale(1)}
+.truck.boost svg{animation:bounce .5s ease 2}
+@keyframes bounce{50%{transform:translateY(-5px)}}
+/* title plate */
+.plate{position:absolute;top:calc(16px + var(--sat));left:16px;z-index:3;
+  background:rgba(253,250,243,.94);border:3px solid var(--ink);border-radius:16px;
+  padding:10px 18px 12px;box-shadow:4px 5px 0 rgba(40,40,60,.26);
+  transform:rotate(-1.6deg);transform-origin:top left;
+  transition:transform .5s cubic-bezier(.32,.9,.35,1),top .5s cubic-bezier(.32,.9,.35,1)}
+.plate h1{font-family:var(--font-display);font-weight:400;font-size:26px;line-height:.95;
+  color:var(--ink);letter-spacing:.5px}
+.plate h1 .r{color:var(--red);text-shadow:2px 2px 0 rgba(203,4,62,.14)}
+.plate .plate-sub{font-family:var(--font-hand);font-weight:700;font-size:17px;color:var(--red-dark);
+  margin-top:2px;transition:opacity .25s,max-height .4s;max-height:24px;overflow:hidden}
+.app.ingame .plate{transform:rotate(-1.6deg) scale(.56);top:calc(10px + var(--sat))}
+.app.ingame .plate .plate-sub{opacity:0;max-height:0}
+.wayahead{position:absolute;top:calc(20px + var(--sat));right:14px;z-index:3;background:var(--red);
+  color:#fff;font-weight:800;font-size:10px;letter-spacing:2.5px;padding:6px 10px;border-radius:6px;
+  transform:rotate(2deg);box-shadow:3px 3px 0 rgba(150,0,45,.5);transition:opacity .3s}
+.app.ingame .wayahead{opacity:0}
+
+/* ═══════════════════ CONTENT ═══════════════════ */
+.content{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;position:relative;
+  padding:18px 18px calc(28px + var(--sab));overscroll-behavior:contain}
+.app.ingame .content{padding-bottom:calc(var(--tabbar-h) + var(--sab) + 16px)}
+.content::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;
+  background-image:radial-gradient(rgba(120,100,70,.06) 1px,transparent 1px);background-size:9px 9px}
+.screen{animation:screenin .32s cubic-bezier(.3,.9,.4,1) both}
+@keyframes screenin{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+/* section headings */
+.h-sec{font-family:var(--font-display);font-weight:400;font-size:15px;color:var(--ink);
+  margin:22px 0 10px;display:flex;align-items:center;gap:10px;letter-spacing:.3px}
+.h-sec:first-child{margin-top:4px}
+.h-sec::after{content:"";flex:1;height:3px;border-radius:2px;
+  background:repeating-linear-gradient(90deg,var(--red) 0 14px,transparent 14px 24px)}
+
+/* ═══════ segmented control (iOS-style, sliding thumb) ═══════ */
+.segc{position:relative;display:grid;background:#ece7da;border-radius:var(--r-m);
+  padding:3px;border:1px solid var(--hairline);box-shadow:inset 0 1px 3px rgba(40,40,60,.07)}
+.segc .thumb{position:absolute;top:3px;bottom:3px;border-radius:11px;background:#fff;
+  border:2.5px solid var(--ink);box-shadow:var(--press);
+  transition:transform .28s cubic-bezier(.3,1.3,.4,1);pointer-events:none}
+.segc button{position:relative;z-index:1;padding:11px 4px;font-weight:700;font-size:15px;
+  color:var(--ink-2);border-radius:11px;transition:color .2s;min-height:44px}
+.segc button .small{display:block;font-weight:500;font-size:11px;color:var(--grey);margin-top:1px}
+.segc button[aria-pressed="true"]{color:var(--ink)}
+.segc button[aria-pressed="true"] .small{color:var(--red)}
+
+/* ═══════ player rows ═══════ */
+.players{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--hairline);
+  border-radius:var(--r-l);box-shadow:var(--sh-1);overflow:hidden;margin-top:12px}
+.prow{display:flex;align-items:center;gap:12px;padding:9px 14px;transition:opacity .25s}
+.prow+.prow{border-top:1px solid var(--hairline)}
+.prow.off{opacity:.32;pointer-events:none}
+.avatar{width:38px;height:38px;border-radius:50%;flex:0 0 auto;display:flex;align-items:center;
+  justify-content:center;font-size:19px;border:2.5px solid var(--ink);box-shadow:1px 2px 0 rgba(40,40,60,.18)}
+.prow input{flex:1;border:none;background:transparent;font-size:17px;font-weight:600;
+  color:var(--ink);padding:10px 0;min-width:0}
+.prow input::placeholder{color:#b9b4a8;font-weight:500}
+
+/* ═══════ primary CTA ═══════ */
+.go{margin-top:28px;width:100%;border:3px solid var(--red-dark);position:relative;
+  background:linear-gradient(180deg,var(--red-glow),var(--red) 55%);color:#fff;
+  font-family:var(--font-display);font-weight:400;font-size:21px;letter-spacing:1px;
+  padding:17px;border-radius:var(--r-l);min-height:60px;
+  box-shadow:0 7px 0 var(--red-dark),0 14px 26px rgba(203,4,62,.32);
+  transition:transform .09s,box-shadow .09s;text-shadow:0 2px 0 rgba(0,0,0,.18)}
+.go:active{transform:translateY(6px);box-shadow:0 1px 0 var(--red-dark)}
+.resume{margin-top:12px;width:100%;padding:14px;border-radius:var(--r-m);font-weight:700;
+  font-size:15px;color:var(--red);background:var(--red-soft);border:2px dashed var(--red);min-height:48px}
+.hint{font-size:13px;color:#6b6b74;margin-top:18px;line-height:1.6;background:var(--cream);
+  border:2px dashed #d8ceb4;border-radius:var(--r-m);padding:12px 14px}
+.hint b{color:var(--red)}
+
+/* ═══════════════════ GAME ═══════════════════ */
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 10px;margin:0 -2px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;border:2.5px solid var(--ink);background:var(--card);border-radius:30px;
+  padding:6px 13px 6px 7px;font-weight:700;font-size:14px;color:var(--ink);min-height:44px;
+  display:flex;align-items:center;gap:8px;white-space:nowrap;box-shadow:var(--press);
+  transition:transform .12s,background .2s,color .2s}
+.tab .em{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-size:15px}
+.tab[aria-pressed="true"]{background:var(--ink);color:#fff;transform:translateY(-2px)}
+.tab .pts{background:var(--gold);color:var(--ink);border-radius:20px;font-size:11px;
+  font-weight:800;padding:2px 8px;box-shadow:inset 0 -2px 0 rgba(0,0,0,.14)}
+
+.scorebar{display:flex;align-items:flex-end;justify-content:space-between;margin:8px 0 8px}
+.scorebar .who{font-family:var(--font-display);font-weight:400;font-size:20px;line-height:1.1}
+.scorebar .pt{font-family:var(--font-display);font-weight:400;font-size:32px;color:var(--red);
+  line-height:.9;text-shadow:2px 2px 0 rgba(203,4,62,.13);font-variant-numeric:tabular-nums}
+.scorebar .pt small{font-family:var(--font-ui);font-size:11px;color:var(--grey);font-weight:700;
+  letter-spacing:1px;text-transform:uppercase}
+.progress{height:12px;border:2px solid var(--ink);border-radius:20px;background:#fff;
+  overflow:hidden;margin-bottom:16px;box-shadow:inset 0 2px 4px rgba(0,0,0,.07)}
+.progress .fill{height:100%;border-radius:20px;min-width:0;
+  background:repeating-linear-gradient(-45deg,var(--red) 0 10px,var(--red-glow) 10px 20px);
+  transition:width .5s cubic-bezier(.3,1.35,.5,1)}
+
+.grid{display:grid;gap:9px}
+.grid.cols-5{gap:6px}
+.grid.cols-5 .cell{border-radius:13px;padding:5px 3px 4px;border-width:2px}
+.grid.cols-5 .cell svg{height:28px}
+.grid.cols-5 .cell .lbl{font-size:8.4px}
+.grid.cols-5 .cell .badge{font-size:8px;padding:1.5px 4.5px;top:3px;right:3px}
+.grid.cols-5 .cell .turbo{font-size:7px;padding:1px 3.5px;top:3px;left:3px}
+.grid.cols-5 .cell.starred::before{font-size:10px;top:1px;left:4px}
+.grid.cols-5 .stamp span{font-size:8.5px;padding:3px 5px;border-width:2px}
+.cell{position:relative;border:2.5px solid var(--ink);border-radius:var(--r-l);
+  background:linear-gradient(180deg,#fff 0%,#faf6ec 100%);
+  aspect-ratio:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:7px 4px 5px;overflow:hidden;box-shadow:var(--press);
+  transition:transform .12s;touch-action:manipulation;-webkit-user-select:none;user-select:none}
+.cell:active{transform:scale(.94) rotate(-1deg)}
+.cell .ico{font-size:30px;line-height:1;margin-bottom:3px;filter:drop-shadow(1px 2px 1px rgba(0,0,0,.13))}
+.cell svg{width:76%;height:40px;display:block;margin-bottom:2px}
+.cell .lbl{font-size:10.5px;font-weight:700;text-align:center;line-height:1.1;color:var(--ink)}
+.cell .badge{position:absolute;top:5px;right:5px;font-size:9.5px;font-weight:800;color:#fff;
+  background:var(--ink);border-radius:20px;padding:2px 6px;font-variant-numeric:tabular-nums}
+.cell.starred{border-color:var(--red);background:linear-gradient(180deg,#fff 45%,var(--red-soft) 100%)}
+.cell.starred .badge{background:var(--red)}
+.cell.starred::before{content:"★";position:absolute;top:3px;left:6px;color:var(--gold);
+  font-size:13px;text-shadow:1px 1px 0 rgba(0,0,0,.18)}
+.cell.done{background:#fff;border-color:#cdc8bb;box-shadow:1px 2px 0 rgba(40,40,60,.08)}
+.cell.done :is(.ico,svg,.lbl){opacity:.2;filter:grayscale(1)}
+.cell.done .badge{opacity:.22}
+.stamp{position:absolute;inset:0;display:none;align-items:center;justify-content:center;pointer-events:none}
+.cell.done .stamp{display:flex}
+.stamp span{font-family:var(--font-display);font-size:12px;color:var(--red);border:3px solid var(--red);
+  border-radius:8px;padding:4px 8px;transform:rotate(var(--rot,-14deg));letter-spacing:1px;
+  background:rgba(255,255,255,.62);box-shadow:0 0 0 2px rgba(255,255,255,.62);
+  animation:stampin .38s cubic-bezier(.2,2.2,.4,1) both}
+@keyframes stampin{0%{transform:rotate(var(--rot,-14deg)) scale(3.1);opacity:0}
+  60%{opacity:1}100%{transform:rotate(var(--rot,-14deg)) scale(1);opacity:1}}
+.cell.justdone{animation:cellshake .4s ease}
+@keyframes cellshake{25%{transform:rotate(2deg)}55%{transform:rotate(-2deg)}}
+.cell .turbo{position:absolute;top:4px;left:5px;background:var(--gold);color:var(--ink);
+  font-size:8.5px;font-weight:900;border-radius:12px;padding:1.5px 5px;
+  border:1.5px solid var(--ink);box-shadow:1px 1.5px 0 rgba(0,0,0,.2)}
+.cell.lineflash{animation:lineflash 1.5s ease}
+@keyframes lineflash{0%,60%{box-shadow:0 0 0 4px var(--gold),0 0 22px 4px rgba(242,194,0,.7);border-color:var(--gold)}
+  100%{box-shadow:var(--press)}}
+.flyup{position:absolute;z-index:35;font-family:var(--font-display);font-size:17px;color:var(--red);
+  text-shadow:2px 2px 0 #fff,-1px -1px 0 #fff;pointer-events:none;
+  animation:flyup 1s cubic-bezier(.2,.7,.3,1) forwards}
+.flyup.gold{color:#b8860b}
+@keyframes flyup{0%{transform:translateY(0) scale(.6);opacity:0}
+  18%{opacity:1;transform:translateY(-12px) scale(1.15)}
+  100%{transform:translateY(-52px) scale(1);opacity:0}}
+
+/* ═══════ single-tile swap mode ═══════ */
+.swaphint{display:flex;align-items:center;gap:10px;background:var(--red-soft);
+  border:2px dashed var(--red);border-radius:var(--r-m);padding:9px 12px;margin-bottom:12px;
+  font-size:13px;font-weight:700;color:var(--red-dark);animation:screenin .25s ease both}
+.swaphint button{margin-left:auto;flex:0 0 auto;font-size:12.5px;font-weight:800;color:var(--red);
+  background:#fff;border:2px solid var(--red);border-radius:20px;padding:6px 13px;min-height:34px}
+.cell.swappable{border-style:dashed;border-color:var(--red);animation:swappulse 1.1s ease-in-out infinite}
+@keyframes swappulse{50%{box-shadow:0 0 0 4px rgba(203,4,62,.18);transform:scale(.985)}}
+.cell.locked{opacity:.4;filter:saturate(.4)}
+.cell.swapin{animation:flipin .5s cubic-bezier(.3,1.3,.4,1) both}
+@keyframes flipin{0%{transform:rotateY(90deg) scale(.7);opacity:0}100%{transform:rotateY(0) scale(1);opacity:1}}
+.tabbar button.on{background:var(--red-soft);color:var(--red-dark)}
+.swapbadge{position:absolute;top:2px;right:calc(50% - 24px);background:var(--red);color:#fff;
+  font-size:9.5px;font-weight:800;border-radius:14px;padding:1px 6px;min-width:17px;
+  border:2px solid var(--paper);font-variant-numeric:tabular-nums}
+.tabbar button{position:relative}
+
+/* ═══════════════════ BOTTOM TAB BAR ═══════════════════ */
+.tabbar{position:absolute;left:0;right:0;bottom:0;z-index:20;display:none;
+  height:calc(var(--tabbar-h) + var(--sab));padding:6px 10px calc(6px + var(--sab));
+  background:rgba(253,250,243,.86);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);
+  border-top:1px solid var(--hairline)}
+.app.ingame .tabbar{display:flex;gap:4px}
+.tabbar button{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:3px;border-radius:var(--r-m);font-size:10.5px;font-weight:700;color:var(--ink-2);
+  transition:background .15s,color .15s;min-height:44px}
+.tabbar button:active{background:rgba(60,60,70,.08)}
+.tabbar button .ti{font-size:21px;line-height:1}
+.tabbar button.accent{color:var(--red)}
+
+/* ═══════════════════ RESULTS ═══════════════════ */
+.res-title{font-family:var(--font-display);font-weight:400;font-size:26px;text-align:center;
+  margin:6px 0 2px;color:var(--ink)}
+.res-sub{text-align:center;font-family:var(--font-hand);font-weight:700;font-size:19px;
+  color:var(--red-dark);margin-bottom:18px}
+.podium{display:flex;flex-direction:column;gap:10px}
+.pcard{display:flex;align-items:center;gap:13px;background:var(--card);border:2.5px solid var(--ink);
+  border-radius:var(--r-l);padding:13px 15px;box-shadow:var(--press)}
+.pcard.winner{background:linear-gradient(180deg,#fffbe8,#fff3c2);border-color:#b8912b;
+  box-shadow:3px 4px 0 rgba(160,120,20,.3);position:relative}
+.pcard.winner::after{content:"👑";position:absolute;top:-15px;left:14px;font-size:23px;
+  transform:rotate(-14deg);filter:drop-shadow(1px 2px 1px rgba(0,0,0,.2))}
+.pcard .medal{font-size:26px;flex:0 0 auto;width:32px;text-align:center}
+.pcard .pinfo{flex:1;min-width:0}
+.pcard .pname{font-weight:800;font-size:17px;display:flex;align-items:center;gap:7px}
+.pcard .pstats{font-size:12px;color:var(--ink-2);margin-top:2px;font-weight:500}
+.pcard .pscore{font-family:var(--font-display);font-size:26px;color:var(--red);
+  font-variant-numeric:tabular-nums}
+.pcard .pscore small{font-family:var(--font-ui);font-size:10px;color:var(--grey);
+  font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.res-actions{display:flex;flex-direction:column;gap:10px;margin-top:24px}
+.btn-sec{width:100%;padding:15px;border-radius:var(--r-m);font-weight:700;font-size:15px;
+  border:2.5px solid var(--ink);background:var(--card);color:var(--ink);
+  box-shadow:var(--press);min-height:50px;transition:transform .1s,box-shadow .1s}
+.btn-sec:active{transform:translateY(2px);box-shadow:0 1px 0 rgba(40,40,60,.18)}
+.btn-sec.red{border-color:var(--red-dark);background:var(--red);color:#fff;box-shadow:0 5px 0 var(--red-dark)}
+.btn-sec.red:active{box-shadow:0 1px 0 var(--red-dark)}
+.btn-sec.ghost{border-style:dashed;background:transparent;box-shadow:none;color:var(--ink-2)}
+
+/* ═══════════════════ TOAST ═══════════════════ */
+.toast{position:absolute;left:50%;bottom:calc(var(--tabbar-h) + var(--sab) + 14px);z-index:30;
+  transform:translateX(-50%) translateY(140px);max-width:88%;
+  background:var(--ink);color:#fff;padding:12px 19px;border-radius:34px;font-weight:700;
+  font-size:14.5px;border:2.5px solid #fff;box-shadow:var(--sh-3);pointer-events:none;
+  transition:transform .38s cubic-bezier(.2,.9,.3,1.35)}
+.toast.show{transform:translateX(-50%) translateY(0)}
+.toast.gold{background:var(--red);border-color:var(--gold)}
+
+/* ═══════════════════ CELEBRATION ═══════════════════ */
+.banner{position:absolute;inset:0;z-index:40;display:flex;align-items:center;justify-content:center;
+  padding:24px;background:rgba(40,40,55,.55);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);
+  opacity:0;pointer-events:none;transition:opacity .25s}
+.banner.show{opacity:1;pointer-events:auto}
+.card-pop{background:var(--paper);border:4px solid var(--ink);border-radius:var(--r-xl);
+  padding:32px 26px 26px;text-align:center;max-width:330px;width:100%;position:relative;
+  box-shadow:8px 10px 0 rgba(0,0,0,.28);transform:scale(.5) rotate(-5deg);transition:transform .4s cubic-bezier(.2,1.55,.4,1)}
+.banner.show .card-pop{transform:scale(1) rotate(0)}
+.card-pop .burst{position:absolute;top:-26px;left:50%;transform:translateX(-50%);
+  background:var(--gold);border:3px solid var(--ink);border-radius:50%;width:52px;height:52px;
+  display:flex;align-items:center;justify-content:center;font-size:26px;
+  box-shadow:2px 3px 0 rgba(0,0,0,.22)}
+.card-pop .big{font-family:var(--font-display);font-weight:400;color:var(--red);font-size:40px;
+  margin-top:6px;line-height:.92;text-shadow:3px 3px 0 rgba(203,4,62,.13)}
+.card-pop p{font-size:15px;margin:12px 0 20px;font-weight:500;line-height:1.55;color:var(--ink-2)}
+.card-pop button{border:3px solid var(--red-dark);background:var(--red);color:#fff;font-weight:800;
+  font-size:15px;padding:13px 26px;border-radius:var(--r-m);min-height:50px;
+  box-shadow:0 5px 0 var(--red-dark);transition:transform .09s,box-shadow .09s}
+.card-pop button:active{transform:translateY(4px);box-shadow:0 1px 0 var(--red-dark)}
+.confetti{position:absolute;top:-16px;width:10px;height:15px;z-index:60;pointer-events:none;border-radius:2px}
+
+/* ═══════════════════ RULES SHEET ═══════════════════ */
+.sheet-wrap{position:absolute;inset:0;z-index:50;pointer-events:none}
+.sheet-wrap .scrim{position:absolute;inset:0;background:rgba(30,30,45,.45);opacity:0;transition:opacity .28s}
+.sheet{position:absolute;left:0;right:0;bottom:0;background:var(--paper);
+  border-radius:22px 22px 0 0;border:3px solid var(--ink);border-bottom:none;
+  padding:10px 20px calc(24px + var(--sab));max-height:78%;overflow-y:auto;
+  -webkit-overflow-scrolling:touch;overscroll-behavior:contain;
+  transform:translateY(105%);transition:transform .38s cubic-bezier(.3,1,.35,1);
+  box-shadow:0 -14px 40px rgba(0,0,0,.3)}
+.sheet-wrap.show{pointer-events:auto}
+.sheet-wrap.show .scrim{opacity:1}
+.sheet-wrap.show .sheet{transform:translateY(0)}
+.grabber{width:40px;height:5px;border-radius:3px;background:#d3cebf;margin:4px auto 14px}
+.sheet h3{font-family:var(--font-display);font-weight:400;font-size:19px;margin-bottom:4px}
+.sheet .lead{font-size:13.5px;color:var(--ink-2);line-height:1.55;margin-bottom:14px}
+.rule-list{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--hairline);
+  border-radius:var(--r-m);overflow:hidden;box-shadow:var(--sh-1);margin-bottom:16px}
+.rrow{display:flex;align-items:center;gap:12px;padding:9px 13px;font-size:13.5px;font-weight:600}
+.rrow+.rrow{border-top:1px solid var(--hairline)}
+.rrow svg{width:52px;height:30px;flex:0 0 auto}
+.rrow .remoji{width:52px;text-align:center;font-size:22px;flex:0 0 auto}
+.rrow .rpts{margin-left:auto;font-family:var(--font-display);color:var(--red);font-size:15px;white-space:nowrap}
+.sheet .note{font-size:12.5px;color:var(--ink-2);line-height:1.6;background:var(--cream);
+  border:2px dashed #d8ceb4;border-radius:var(--r-s);padding:10px 12px;margin-bottom:8px}
+.sheet .note b{color:var(--red)}
+
+/* ═══════════════════ MOTION / MISC ═══════════════════ */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.15s !important}
+  .truck{left:calc(50% - 88px) !important;animation:none !important}
+}
+@media (max-height:660px){
+  .hero{height:170px}
+  .app.ingame .hero{height:calc(96px + var(--sat))}
+}
+</style>
+</head>
+<body>
+<!-- Official Ahola brand vectors (Brand Book) — shared symbols -->
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+  <symbol id="ahola-logo" viewBox="0 0 1517.52 366.94">
+    <path fill="#cb043e" d="M1198.48,109.11h-49.09v109.17c-.06,4.52,1.24,8.96,3.74,12.73,2.45,3.74,5.57,7,9.2,9.61,3.53,2.57,7.45,4.56,11.61,5.9,3.53,1.2,7.21,1.84,10.94,1.92h116.85v-31.25h-90.7c-2.81.22-5.62-.33-8.13-1.6-2.49-1.28-4.15-3.75-4.4-6.55v-99.95Z"/>
+    <path fill="#cb043e" d="M1363.14,184.49h106.04v-33.96c.4-2.46-.2-4.98-1.67-6.99-1.74-1.96-4.25-3.06-6.87-2.99l-83,.06c-2.65-.25-5.3.54-7.38,2.2-1.66,2.2-2.46,4.94-2.24,7.69v97.93h-48.82v-105.26c.25-10.72,5.54-20.69,14.27-26.91,7.27-4.75,15.78-7.26,24.46-7.23h120.62c8.64-.09,17.13,2.24,24.51,6.73,8.61,6.13,13.93,15.87,14.42,26.43l.06,106.23h-48.3v-33.14h-106.21l.13-30.79Z"/>
+    <path fill="#cb043e" d="M508.68,184.49h103.54v-33.96c.4-2.46-.2-4.98-1.67-6.99-1.74-1.96-4.25-3.06-6.87-2.99l-83.01.06c-2.65-.25-5.3.54-7.38,2.2-1.66,2.2-2.46,4.94-2.24,7.69v97.93h-48.82v-105.26c.25-10.72,5.54-20.69,14.27-26.91,7.27-4.75,15.78-7.26,24.46-7.23h120.62c8.64-.09,17.13,2.24,24.51,6.73,8.61,6.13,13.93,15.87,14.42,26.43l.06,106.23h-48.33v-33.14h-103.51l-.03-30.79Z"/>
+    <path fill="#cb043e" d="M844.5,248.42v-53.57h-101.4v53.57h-48.83V109.06h48.83v55h101.4v-55h48.57v139.36h-48.57Z"/>
+    <path fill="#cb043e" d="M1120.7,215.67c-.57,8.38-4.14,16.27-10.04,22.24-7.74,7.04-17.91,10.8-28.37,10.5h-120.27c-9.71.4-19.27-2.49-27.12-8.21-7.34-6.07-11.88-14.88-12.55-24.38l.11-71.84c-.07-10.61,4.86-20.64,13.3-27.07,7.58-5.35,16.68-8.1,25.95-7.86h120.88c9.72.05,19.16,3.24,26.91,9.09,7,6.44,11.05,15.48,11.21,24.99v72.54ZM971.28,207.98c.05,2.57,1.08,5.03,2.88,6.86,1.93,1.37,4.26,2.04,6.62,1.92l82.54.12c2.78.2,5.53-.77,7.55-2.69,1.52-2.06,2.17-4.63,1.8-7.16v-57.3c.25-2.25-.39-4.5-1.77-6.29-1.64-1.86-4.01-2.91-6.49-2.88h-83.08c-2.81-.24-5.61.57-7.86,2.28-1.69,1.93-2.48,4.47-2.19,7.02v58.13Z"/>
+    <path fill="#cb043e" d="M219.52,366.94c-8.49-.22-15.19-7.28-14.97-15.78.18-7,5.07-12.99,11.89-14.58,2.88-.59,5.77-1.27,8.65-2.03,52.9-14.22,94.36-55.32,109.05-108.09,2.87-7.99,11.67-12.15,19.67-9.28,7.16,2.57,11.37,9.98,9.9,17.44-17.62,63.24-67.31,112.49-130.71,129.53-3.41.91-6.88,1.73-10.33,2.43-1.03.22-2.09.34-3.14.35Z"/>
+    <path fill="#cb043e" d="M396.38,170.36l-146.2-.2c10.88-35.67,20.33-63.55,22.57-71.12,1.24-4.16,4.81-20.13-12.29-21.93-13.11-1.3-26.29-1.65-39.45-1.07-13.43.48-26.29,5.57-36.42,14.42-10.84,8.12-19.75,23.38-28.55,47.31-4.09,11.24-7.88,22.11-11.26,32.27h-32.8c-33.26,0-48.06,21.57-50.65,40.04-2.2,13.02,1.26,26.35,9.51,36.66,9.58,11.12,23.39,17.7,38.06,18.14,23.61.53,44.49-15.24,50.44-38.1,1.77-6.46,4.38-15.38,7.69-26l41.62.06c-14.56,46.82-27.66,87.23-31.77,95.3-6.72,17.22-24.05,27.88-42.44,26.12h-1.17c-20.9-.28-42.01-14.72-51.9-22.47-63.15-57.41-67.8-155.14-10.39-218.29,57.41-63.15,155.14-67.8,218.29-10.4,21.45,19.5,36.98,44.64,44.82,72.55,2.91,7.98,11.74,12.08,19.72,9.17,7.11-2.6,11.28-9.98,9.82-17.41-10.85-38.51-33.81-72.51-65.47-96.97C265.81,13.41,226.06-.12,185.19,0,82.92,0,0,82.89,0,185.15c0,48,18.63,94.13,51.98,128.65,20.74,23.19,49.83,37.21,80.89,39h1.58c29.95,1.71,57.79-15.41,69.8-42.89,5.64-11.1,21.5-60.48,36.52-109.15l155.58.22h0c8.47-.64,14.82-8.02,14.18-16.49-.57-7.58-6.6-13.61-14.18-14.18l.05.05ZM129.75,218.63c-2.34,10.38-11.67,17.67-22.31,17.45-9.79-.23-17.54-8.35-17.31-18.14.22-9.47,7.84-17.09,17.31-17.31h27.53c-2.15,7.09-3.92,13.22-5.22,18ZM237.29,109.59c-5.92,19.81-12.49,38.67-19.16,60.55l-40.99-.07c2.4-7.01,4.98-14.3,7.69-21.77,3.53-11.6,8.61-22.68,15.1-32.93,8.62-11.53,40.24-14.41,37.36-5.78h0Z"/>
+  </symbol>
+  <symbol id="ahola-a" viewBox="0 0 1110.27 989.45">
+    <path fill="#cb043e" d="M592.01,989.45c-19.22,0-36.44-13.47-40.46-33.04-4.6-22.37,9.81-44.23,32.18-48.82,7.74-1.59,15.55-3.43,23.21-5.47,142.23-37.87,254.94-149.54,294.16-291.42,6.08-22.01,28.85-34.93,50.87-28.84,22.01,6.08,34.92,28.86,28.84,50.87-47,170.06-182.1,303.91-352.58,349.3-9.19,2.45-18.56,4.66-27.85,6.56-2.8.58-5.61.85-8.36.85Z"/>
+    <path fill="#cb043e" d="M1068.98,459.33c-3.81,0-200.8-.29-394.28-.57,29.34-96.19,54.8-171.36,60.85-191.74,3.33-11.23,12.92-54.27-33.15-59.14-3.05-.32-49.55-5.46-106.4-2.88-31.06,1.41-56.85,7.75-98.2,38.76-29.22,21.92-53.27,63.07-77.01,127.57-11.04,30.31-21.24,59.7-30.38,87.03-49.45-.07-82.56-.11-88.47-.11-89.68,0-129.62,58.18-136.57,107.99-5.26,37.69,3.61,71.87,25.64,98.86,23.59,28.88,60.04,46.25,102.63,48.91,60.51,3.82,119.04-40.38,136.05-102.75,4.75-17.41,11.82-41.51,20.8-70.13,34.09.05,72.15.1,112.23.16-39.24,126.26-74.6,235.23-85.67,257.02-18.15,35.68-41.96,70.45-114.46,70.45-1.04,0-2.11,0-3.17-.02-56.38-.77-113.3-39.7-139.87-60.6-87.09-79-136.86-190.95-136.86-308.73,0-229.77,186.94-416.71,416.71-416.71,92.87,0,180.73,29.88,254.08,86.4,71.09,54.78,123.43,132.26,147.38,218.18,6.13,22,28.93,34.87,50.93,28.73,22-6.13,34.86-28.93,28.73-50.93-28.71-103.02-91.41-195.88-176.56-261.49C716.01,35.82,610.7,0,499.41,0,224.03,0,0,224.03,0,499.41c0,130.02,50.62,254.1,140.16,346.85,1.95,3.32,88.88,103,218.13,105.17,1.43.02,2.84.03,4.25.03,115.88,0,162.9-65.85,188.23-115.67,15.22-29.93,57.97-163.12,98.56-294.38,201.19.29,415.56.6,419.53.61h.06c22.81,0,41.31-18.47,41.35-41.29.03-22.84-18.45-41.38-41.29-41.41ZM349.92,589.5c-4.65,17.05-22.68,49.64-60.15,47.06-26.4,0-47.81-21.4-47.81-47.81s21.4-47.81,47.81-47.81c1.66,0,39.56.03,74.23.07-5.81,19.13-10.56,35.57-14.08,48.49ZM639.94,295.44c-15.99,53.44-33.65,104.28-51.71,163.19-38.85-.06-76.27-.11-110.55-.16,6.49-18.9,13.43-38.59,20.76-58.71,24.08-65.4,36.84-83.66,40.71-88.82,23.26-31.01,108.54-38.76,100.79-15.51Z"/>
+  </symbol>
+  <symbol id="way-ahead" viewBox="0 0 743.04 54.1">
+    <polygon fill="#414042" points="76.2 30.14 61.57 0 46.79 0 32.24 30.13 17.7 0 0 0 25.73 53.62 25.96 54.1 38.44 54.1 54.13 21.49 69.92 54.1 82.4 54.1 108.35 0 90.75 0 76.2 30.14"/>
+    <path fill="#414042" d="M184.36,3.33c-2.95-2.21-6.51-3.33-10.58-3.33h-40.6c-4.07,0-7.62,1.12-10.54,3.34-2.99,2.27-4.51,5.05-4.51,8.28v42.48h16.56v-16.89h37.48v16.89h16.75V11.62c0-3.22-1.53-6.01-4.56-8.28ZM172.17,13.04v11.13h-37.48v-11.13h37.48Z"/>
+    <polygon fill="#414042" points="238.58 20.35 217.22 0 197.14 0 230.25 34.02 230.25 54.1 246.91 54.1 246.91 34.09 280.12 0 259.84 0 238.58 20.35"/>
+    <path fill="#414042" d="M392.08,3.33c-2.95-2.21-6.51-3.33-10.58-3.33h-40.6c-4.07,0-7.62,1.12-10.54,3.34-2.99,2.27-4.51,5.05-4.51,8.28v42.48h16.56v-16.89h37.48v16.89h16.75V11.62c0-3.22-1.53-6.01-4.56-8.28ZM379.89,13.04v11.13h-37.48v-11.13h37.48Z"/>
+    <polygon fill="#414042" points="469.34 20.53 430.23 20.53 430.23 0 413.67 0 413.67 54.1 430.23 54.1 430.23 33.57 469.34 33.57 469.34 54.1 485.91 54.1 485.91 0 469.34 0 469.34 20.53"/>
+    <polygon fill="#414042" points="503.13 54.1 568.64 54.1 568.64 41.06 519.88 41.06 519.88 33.57 559.14 33.57 559.14 20.53 519.88 20.53 519.88 13.04 568.64 13.04 568.64 0 503.13 0 503.13 54.1"/>
+    <path fill="#414042" d="M650.56,3.33c-2.95-2.21-6.51-3.33-10.58-3.33h-40.6c-4.07,0-7.62,1.12-10.54,3.34-2.99,2.27-4.51,5.05-4.51,8.28v42.48h16.56v-16.89h37.47v16.89h16.76V11.62c0-3.22-1.54-6.01-4.56-8.28ZM638.37,13.04v11.13h-37.47v-11.13h37.47Z"/>
+    <path fill="#414042" d="M738.48,3.33c-2.95-2.21-6.51-3.33-10.59-3.33h-55.65v54.1h55.65c4.07,0,7.63-1.12,10.59-3.33,3.03-2.27,4.56-5.05,4.56-8.28V11.62c0-3.23-1.53-6.01-4.56-8.28ZM726.29,13.04v28.02h-37.48V13.04h37.48Z"/>
+  </symbol>
+</svg>
+<div class="app" id="app">
+
+  <!-- ═══ HERO ═══ -->
+  <div class="hero" aria-hidden="true">
+    <div class="stars"></div>
+    <div class="sun"></div><div class="moon"></div>
+    <div class="cloud c1"></div><div class="cloud c2"></div>
+    <div class="gull">𓅮</div><div class="gull">𓅮</div>
+    <div class="hills"></div>
+    <div class="forestband"></div>
+    <div class="sea"></div>
+    <div class="grassedge"></div>
+    <div class="props"></div>
+    <div class="roadband"></div>
+    <div class="truck" id="heroTruck">
+      <div class="honk">Tööt tööt!</div>
+      <svg viewBox="0 0 176 76">
+        <!-- trailer: big A-mark like the mascot sheet -->
+        <rect x="2" y="8" width="112" height="44" rx="4" fill="#ffffff" stroke="#33333a" stroke-width="3"/>
+        <rect x="4" y="47" width="108" height="4" fill="#e8e3d6"/>
+        <use href="#ahola-a" x="41" y="13" width="34" height="30.3"/>
+        <!-- cab body -->
+        <path d="M116 18 h27 c3 0 5.2 1.4 6.8 3.8 l9.4 13.6 c1.4 2 2 4 2 6.2 v6.4 c0 2.4-1.8 4-4.2 4 h-41 z" fill="#ffffff" stroke="#33333a" stroke-width="3"/>
+        <!-- windshield face -->
+        <path class="cabwin" d="M121 23.5 h19 c2.2 0 4 .9 5.2 2.6 l6.4 9.4 h-30.6 z" fill="#dff1fb" stroke="#33333a" stroke-width="2.5"/>
+        <g class="eye e1"><circle cx="129.5" cy="29.4" r="5.2" fill="#fff" stroke="#33333a" stroke-width="2"/><g class="pupil"><circle cx="130.3" cy="29.8" r="2.5" fill="#26262c"/><circle cx="131.2" cy="28.8" r=".9" fill="#fff"/></g></g>
+        <g class="eye e2"><circle cx="143.5" cy="29.4" r="5.5" fill="#fff" stroke="#33333a" stroke-width="2"/><g class="pupil"><circle cx="144.4" cy="29.8" r="2.6" fill="#26262c"/><circle cx="145.3" cy="28.8" r="1" fill="#fff"/></g></g>
+        <!-- visor brow -->
+        <rect x="114.5" y="16.5" width="43" height="7" rx="3.5" fill="#26262c" stroke="#33333a" stroke-width="2"/>
+        <!-- mirror -->
+        <rect x="160.5" y="20.5" width="3.4" height="7.5" rx="1.5" fill="#26262c"/>
+        <!-- smile / surprised mouth -->
+        <path class="mouth-s" d="M148.5 39.5 q5.5 6 11 0 z" fill="#8e2436" stroke="#33333a" stroke-width="2" stroke-linejoin="round"/>
+        <circle class="mouth-o" cx="154" cy="41.6" r="3.2" fill="#8e2436" stroke="#33333a" stroke-width="2"/>
+        <!-- red skirt (Aholan värit) -->
+        <path d="M116 46 h45.2 v2 c0 2.4-1.8 4-4.2 4 h-41 z" fill="#CB043E"/>
+        <!-- headlight + beam -->
+        <rect x="158.8" y="45.6" width="4.2" height="4.6" rx="1.4" fill="#f2c200" stroke="#33333a" stroke-width="1.3"/>
+        <g class="beam"><path d="M163 45 L206 36 L206 56 L163 51 Z" fill="url(#beamG)"/><circle cx="162.5" cy="48" r="2.6" fill="#ffe28a"/></g>
+        <defs><linearGradient id="beamG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffe9a8" stop-opacity=".95"/><stop offset="1" stop-color="#ffe9a8" stop-opacity="0"/></linearGradient></defs>
+        <!-- red mudflaps -->
+        <rect x="38" y="50" width="7" height="6" fill="#CB043E"/>
+        <rect x="148" y="50" width="7" height="6" fill="#CB043E"/>
+        <g class="wheel"><circle cx="27" cy="58" r="11" fill="#26262c" stroke="#33333a" stroke-width="3"/><circle cx="27" cy="58" r="4.5" fill="#c9c9cf"/><rect x="25.8" y="49" width="2.4" height="7" fill="#c9c9cf"/></g>
+        <g class="wheel"><circle cx="54" cy="58" r="11" fill="#26262c" stroke="#33333a" stroke-width="3"/><circle cx="54" cy="58" r="4.5" fill="#c9c9cf"/><rect x="52.8" y="49" width="2.4" height="7" fill="#c9c9cf"/></g>
+        <g class="wheel"><circle cx="138" cy="58" r="11" fill="#26262c" stroke="#33333a" stroke-width="3"/><circle cx="138" cy="58" r="4.5" fill="#c9c9cf"/><rect x="136.8" y="49" width="2.4" height="7" fill="#c9c9cf"/></g>
+      </svg>
+    </div>
+    <div class="plate">
+      <h1>Kivaa<br><span class="r">matkalla</span></h1>
+      <div class="plate-sub">bongauspeli koko perheelle</div>
+    </div>
+    <div class="wayahead">WAY AHEAD</div>
+    <button type="button" class="skytoggle" onclick="ui.cyclePhase()" aria-label="Vaihda vuorokaudenaikaa"></button>
+  </div>
+
+  <!-- ═══ CONTENT ═══ -->
+  <main class="content" id="main"></main>
+
+  <!-- ═══ BOTTOM TAB BAR (game) ═══ -->
+  <nav class="tabbar" id="tabbar" aria-label="Pelin toiminnot">
+    <button type="button" id="swapBtn" onclick="ui.toggleSwap()" aria-label="Vaihda yksi ruutu"><span class="swapbadge" id="swapCount">3</span><span class="ti">🔁</span>Vaihda ruutu</button>
+    <button type="button" onclick="ui.openRules()" aria-label="Näytä säännöt"><span class="ti">📖</span>Säännöt</button>
+    <button type="button" id="soundBtn" onclick="ui.toggleSound()" aria-label="Äänet päälle tai pois" aria-pressed="true"><span class="ti" id="soundIco">🔊</span>Äänet</button>
+    <button type="button" class="accent" onclick="ui.results()" aria-label="Lopeta ja näytä tulokset"><span class="ti">🏁</span>Tulokset</button>
+  </nav>
+
+  <!-- ═══ TOAST ═══ -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- ═══ CELEBRATION ═══ -->
+  <div class="banner" id="banner" role="dialog" aria-modal="true" aria-labelledby="bannerBig">
+    <div class="card-pop">
+      <div class="burst">🎉</div>
+      <p class="big" id="bannerBig">BINGO!</p>
+      <p id="bannerTxt"></p>
+      <button type="button" onclick="ui.closeBanner()">Jatka bongaamista</button>
+    </div>
+  </div>
+
+  <!-- ═══ RULES SHEET ═══ -->
+  <div class="sheet-wrap" id="sheetWrap">
+    <div class="scrim" onclick="ui.closeRules()"></div>
+    <div class="sheet" role="dialog" aria-modal="true" aria-label="Säännöt">
+      <div class="grabber"></div>
+      <h3>Näin pelataan</h3>
+      <p class="lead">Kun näet ruudussa olevan asian ikkunasta, napauta ruutua – siihen lyödään leima ja saat pisteet. Täysi rivi (vaaka, pysty tai vino) tuo <b>BINGON</b>, täysi kortti isot juhlat.</p>
+      <h3 style="font-size:15px;margin-bottom:8px">★ Aholan erikoisbongaukset</h3>
+      <div class="rule-list" id="ruleAhola"></div>
+      <h3 style="font-size:15px;margin-bottom:8px">Arkibongaukset</h3>
+      <div class="rule-list" id="ruleArki"></div>
+      <p class="note">Näpäytitkö vahingossa? <b>Napauta leimattua ruutua uudelleen</b> niin bongaus perutaan.</p>
+      <p class="note">Bonukset: jokainen täysi rivi <b>+5 p</b>, täysi kortti <b>+15 p</b>. Yksi ruutu kortilla on <b>⚡×2-tuplaruutu</b> – siitä saa kaksinkertaiset pisteet!</p>
+      <p class="note">Huono ruutu? Jokaisella on <b>3 vaihtoa per kortti</b> – 🔁 Vaihda ruutu, valitse vaihdettava, ja tilalle arvotaan uusi. Bongattua ruutua ei voi vaihtaa. ⚡ pysyy paikallaan vaihdossa.</p>
+      <p class="note">Vinkki: napauta <b>aurinkoa</b> aloitusnäytöllä – maisema vaihtuu illaksi ja yöksi ajovaloineen. 🌙</p>
+      <p class="note">Vihje kuskille: sinä ajat – anna pelikaverin leimailla puolestasi. 🚗💨</p>
+      <button type="button" class="btn-sec" style="margin-top:6px" onclick="ui.closeRules()">Selvä!</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+'use strict';
+/* ══════════════════════════════════════════════════
+   Kivaa matkalla · Aholan versio — v1.0
+   Single-file offline travel-bingo. No dependencies.
+   ══════════════════════════════════════════════════ */
+
+/* ---------- illustrated spotting icons ---------- */
+const SVGS = {
+ahola:`<svg viewBox="0 0 80 48" aria-hidden="true"><rect x="3" y="12" width="48" height="22" rx="3" fill="#fff" stroke="#33333a" stroke-width="2.5"/><use href="#ahola-a" x="18" y="14.5" width="19" height="16.9"/><path d="M51 18 h13 c2 0 3 .8 4 2 l5 7 c.8 1 1 2 1 3 v4 h-23 z" fill="#fff" stroke="#33333a" stroke-width="2.5"/><path d="M53.5 21.5 h8.5 c1.2 0 2.2 .5 2.9 1.4 l3.4 5.1 h-14.8 z" fill="#dff1fb" stroke="#33333a" stroke-width="1.7"/><g class="eye e1"><circle cx="57.6" cy="24.8" r="2.7" fill="#fff" stroke="#33333a" stroke-width="1.5"/><circle cx="58.1" cy="25" r="1.25" fill="#26262c"/></g><g class="eye e2"><circle cx="64.6" cy="24.8" r="2.9" fill="#fff" stroke="#33333a" stroke-width="1.5"/><circle cx="65.1" cy="25" r="1.3" fill="#26262c"/></g><rect x="50" y="17.4" width="21.5" height="4.2" rx="2.1" fill="#26262c" stroke="#33333a" stroke-width="1.4"/><path d="M66.8 29.2 q3 3.4 6 0 z" fill="#8e2436" stroke="#33333a" stroke-width="1.5" stroke-linejoin="round"/><path d="M51 32 h23 v2 h-23 z" fill="#CB043E"/><circle cx="15" cy="37" r="5.5" fill="#26262c" stroke="#33333a" stroke-width="2"/><circle cx="15" cy="37" r="2" fill="#c9c9cf"/><circle cx="32" cy="37" r="5.5" fill="#26262c" stroke="#33333a" stroke-width="2"/><circle cx="32" cy="37" r="2" fill="#c9c9cf"/><circle cx="61" cy="37" r="5.5" fill="#26262c" stroke="#33333a" stroke-width="2"/><circle cx="61" cy="37" r="2" fill="#c9c9cf"/></svg>`,
+lapa:`<svg viewBox="0 0 80 48" aria-hidden="true"><path d="M4 19 Q40 11 76 21 Q40 26 4 26 Z" fill="#f3f5f7" stroke="#33333a" stroke-width="2.5"/><rect x="8" y="28" width="62" height="5" rx="2" fill="#8a8a92" stroke="#33333a" stroke-width="1.8"/><circle cx="20" cy="38" r="5" fill="#26262c" stroke="#33333a" stroke-width="2"/><circle cx="40" cy="38" r="5" fill="#26262c" stroke="#33333a" stroke-width="2"/><circle cx="60" cy="38" r="5" fill="#26262c" stroke="#33333a" stroke-width="2"/></svg>`,
+erikois:`<svg viewBox="0 0 80 48" aria-hidden="true"><line x1="4" y1="16" x2="4" y2="4" stroke="#33333a" stroke-width="2.5"/><path d="M4 4 h11 v7 h-11 z" fill="#CB043E" stroke="#33333a" stroke-width="1.6"/><rect x="2" y="16" width="56" height="9" rx="2" fill="#f2c200" stroke="#33333a" stroke-width="2.5"/><path d="M58 11 h9 c2 0 3 .8 4 2 l4 6 v11 h-17 z" fill="#33333a"/><rect x="61" y="14" width="7" height="6" rx="1" fill="#bfe3f7"/><rect x="8" y="25" width="56" height="4" fill="#8a8a92"/><circle cx="18" cy="35" r="5" fill="#26262c" stroke="#33333a" stroke-width="2"/><circle cx="32" cy="35" r="5" fill="#26262c" stroke="#33333a" stroke-width="2"/><circle cx="64" cy="35" r="5" fill="#26262c" stroke="#33333a" stroke-width="2"/></svg>`,
+lautta:`<svg viewBox="0 0 80 48" aria-hidden="true"><rect x="15" y="12" width="44" height="12" rx="2" fill="#CB043E" stroke="#33333a" stroke-width="2"/><rect x="20" y="15" width="6" height="5" fill="#bfe3f7"/><rect x="31" y="15" width="6" height="5" fill="#bfe3f7"/><rect x="42" y="15" width="6" height="5" fill="#bfe3f7"/><rect x="36" y="5" width="4" height="8" fill="#33333a"/><path d="M6 24 H72 L64 37 H13 Z" fill="#fff" stroke="#33333a" stroke-width="2.5"/><path d="M2 43 q6 -5 13 0 t13 0 t13 0 t13 0 t13 0 t13 0" fill="none" stroke="#4aa2cc" stroke-width="3" stroke-linecap="round"/></svg>`,
+nosturi:`<svg viewBox="0 0 80 48" aria-hidden="true"><line x1="20" y1="29" x2="72" y2="6" stroke="#CB043E" stroke-width="5" stroke-linecap="round"/><line x1="71" y1="7" x2="71" y2="19" stroke="#33333a" stroke-width="1.8"/><path d="M67 18 h8 v6 h-8 z" fill="#f2c200" stroke="#33333a" stroke-width="1.6"/><rect x="8" y="25" width="32" height="11" rx="3" fill="#f2c200" stroke="#33333a" stroke-width="2.5"/><rect x="12" y="27" width="9" height="6" rx="1" fill="#bfe3f7"/><circle cx="17" cy="39" r="5" fill="#26262c" stroke="#33333a" stroke-width="2"/><circle cx="32" cy="39" r="5" fill="#26262c" stroke="#33333a" stroke-width="2"/></svg>`,
+saatto:`<svg viewBox="0 0 80 48" aria-hidden="true"><rect x="30" y="10" width="16" height="6" rx="3" fill="#ff8a00" stroke="#33333a" stroke-width="1.8"/><circle cx="34" cy="13" r="1.4" fill="#fff"/><circle cx="42" cy="13" r="1.4" fill="#fff"/><path d="M15 30 L22 19 H51 L60 30 Z" fill="#f2c200" stroke="#33333a" stroke-width="2.5"/><rect x="9" y="30" width="58" height="7" rx="3" fill="#f2c200" stroke="#33333a" stroke-width="2.5"/><rect x="26" y="22" width="9" height="6" rx="1" fill="#bfe3f7"/><rect x="38" y="22" width="9" height="6" rx="1" fill="#bfe3f7"/><circle cx="21" cy="39" r="5" fill="#26262c" stroke="#33333a" stroke-width="2"/><circle cx="54" cy="39" r="5" fill="#26262c" stroke="#33333a" stroke-width="2"/></svg>`,
+lavetti:`<svg viewBox="0 0 80 48" aria-hidden="true"><path d="M6 19 H17 V28 H46 V19 H55 L64 28 V34 H6 Z" fill="#8a8a92" stroke="#33333a" stroke-width="2.5"/><rect x="21" y="21" width="21" height="7" rx="1" fill="#c9a24a" stroke="#33333a" stroke-width="1.8"/><circle cx="14" cy="37" r="4.5" fill="#26262c" stroke="#33333a" stroke-width="2"/><circle cx="25" cy="37" r="4.5" fill="#26262c" stroke="#33333a" stroke-width="2"/><circle cx="54" cy="37" r="4.5" fill="#26262c" stroke="#33333a" stroke-width="2"/></svg>`,
+kaivinkone:`<svg viewBox="0 0 80 48" aria-hidden="true"><rect x="9" y="34" width="42" height="7" rx="3.5" fill="#26262c" stroke="#33333a" stroke-width="2"/><path d="M40 26 L59 16 L66 29" fill="none" stroke="#CB043E" stroke-width="4.5" stroke-linecap="round"/><path d="M66 29 q6 3 -1 7 l-4 -5 z" fill="#33333a"/><rect x="15" y="22" width="26" height="12" rx="3" fill="#f2c200" stroke="#33333a" stroke-width="2.5"/><rect x="19" y="24" width="9" height="7" rx="1" fill="#bfe3f7"/></svg>`,
+kontti:`<svg viewBox="0 0 80 48" aria-hidden="true"><rect x="3" y="13" width="48" height="21" rx="2" fill="#CB043E" stroke="#33333a" stroke-width="2.5"/><line x1="15" y1="13" x2="15" y2="34" stroke="#96002d" stroke-width="2"/><line x1="27" y1="13" x2="27" y2="34" stroke="#96002d" stroke-width="2"/><line x1="39" y1="13" x2="39" y2="34" stroke="#96002d" stroke-width="2"/><path d="M51 19 h13 l7 8 v7 h-20 z" fill="#33333a"/><rect x="54" y="22" width="8" height="6" rx="1" fill="#bfe3f7"/><circle cx="15" cy="37" r="5" fill="#26262c" stroke="#33333a" stroke-width="2"/><circle cx="31" cy="37" r="5" fill="#26262c" stroke="#33333a" stroke-width="2"/><circle cx="61" cy="37" r="5" fill="#26262c" stroke="#33333a" stroke-width="2"/></svg>`,
+auto:`<svg viewBox="0 0 80 48" aria-hidden="true"><path d="M12 30 q0-7 8-8 l6-8 q2-2.5 6-2.5 h12 q4 0 6 2.5 l6 8 q10 1 10 8 v4 q0 3-3 3 h-48 q-3 0-3-3 z" fill="#CB043E" stroke="#33333a" stroke-width="2.5"/><path d="M28 21 l4-6 h7 v6 z" fill="#bfe3f7" stroke="#33333a" stroke-width="1.8"/><path d="M42 15 h6 q2 0 3 1.5 l3.5 4.5 h-12.5 z" fill="#bfe3f7" stroke="#33333a" stroke-width="1.8"/><circle cx="24" cy="37" r="5.5" fill="#26262c" stroke="#33333a" stroke-width="2"/><circle cx="24" cy="37" r="2" fill="#c9c9cf"/><circle cx="56" cy="37" r="5.5" fill="#26262c" stroke="#33333a" stroke-width="2"/><circle cx="56" cy="37" r="2" fill="#c9c9cf"/></svg>`,
+bussi:`<svg viewBox="0 0 80 48" aria-hidden="true"><rect x="8" y="10" width="64" height="26" rx="5" fill="#f2c200" stroke="#33333a" stroke-width="2.5"/><rect x="13" y="15" width="10" height="8" rx="1.5" fill="#bfe3f7" stroke="#33333a" stroke-width="1.6"/><rect x="27" y="15" width="10" height="8" rx="1.5" fill="#bfe3f7" stroke="#33333a" stroke-width="1.6"/><rect x="41" y="15" width="10" height="8" rx="1.5" fill="#bfe3f7" stroke="#33333a" stroke-width="1.6"/><rect x="55" y="15" width="12" height="16" rx="1.5" fill="#bfe3f7" stroke="#33333a" stroke-width="1.6"/><rect x="8" y="27" width="46" height="4" fill="#CB043E"/><circle cx="22" cy="38" r="5.5" fill="#26262c" stroke="#33333a" stroke-width="2"/><circle cx="22" cy="38" r="2" fill="#c9c9cf"/><circle cx="58" cy="38" r="5.5" fill="#26262c" stroke="#33333a" stroke-width="2"/><circle cx="58" cy="38" r="2" fill="#c9c9cf"/></svg>`,
+moto:`<svg viewBox="0 0 80 48" aria-hidden="true"><circle cx="20" cy="35" r="8.5" fill="none" stroke="#26262c" stroke-width="4"/><circle cx="60" cy="35" r="8.5" fill="none" stroke="#26262c" stroke-width="4"/><path d="M20 35 L34 22 h12 l8 8" fill="none" stroke="#CB043E" stroke-width="4" stroke-linecap="round"/><path d="M60 35 l-6-13 l-6 1" fill="none" stroke="#33333a" stroke-width="3" stroke-linecap="round"/><path d="M32 22 l-5-6 h-6" fill="none" stroke="#33333a" stroke-width="3" stroke-linecap="round"/><ellipse cx="41" cy="25" rx="9" ry="4" fill="#33333a"/></svg>`,
+pyora:`<svg viewBox="0 0 80 48" aria-hidden="true"><circle cx="21" cy="33" r="10" fill="none" stroke="#26262c" stroke-width="3"/><circle cx="59" cy="33" r="10" fill="none" stroke="#26262c" stroke-width="3"/><path d="M21 33 L34 18 h13 l12 15 M34 18 l6 15 h-19 M47 18 l-4-5 h-5 M34 18 l-3-5 h-5 6" fill="none" stroke="#2b7fc4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="40" cy="33" r="2.5" fill="#33333a"/></svg>`,
+traktori:`<svg viewBox="0 0 80 48" aria-hidden="true"><circle cx="55" cy="31" r="13" fill="#26262c" stroke="#33333a" stroke-width="3"/><circle cx="55" cy="31" r="5" fill="#c9c9cf"/><circle cx="20" cy="36" r="8" fill="#26262c" stroke="#33333a" stroke-width="3"/><circle cx="20" cy="36" r="3" fill="#c9c9cf"/><path d="M14 28 v-8 h12 l4-9 h12 v9 h6 v8" fill="#3e7d4d" stroke="#33333a" stroke-width="2.5" stroke-linejoin="round"/><rect x="30" y="13" width="10" height="7" fill="#bfe3f7" stroke="#33333a" stroke-width="1.6"/><rect x="12" y="10" width="3" height="10" fill="#33333a"/></svg>`,
+lokki:`<svg viewBox="0 0 80 48" aria-hidden="true"><path d="M40 26 q-4-6-14-7 q6-4 14-1 q8-3 14 1 q-10 1-14 7" fill="#fff" stroke="#33333a" stroke-width="2.5" stroke-linejoin="round"/><ellipse cx="40" cy="27" rx="7" ry="4.5" fill="#fff" stroke="#33333a" stroke-width="2.5"/><circle cx="44" cy="25.5" r="1" fill="#33333a"/><path d="M47 27 l4 1.5 l-4 1.5" fill="#ff8a00" stroke="#33333a" stroke-width="1.4" stroke-linejoin="round"/><path d="M14 12 q3-2.5 6 0 M60 10 q3-2.5 6 0" fill="none" stroke="#8a8a92" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+lehma:`<svg viewBox="0 0 80 48" aria-hidden="true"><rect x="18" y="16" width="34" height="17" rx="8" fill="#fff" stroke="#33333a" stroke-width="2.5"/><path d="M26 18 q6 4 3 11 q7 2 10-3" fill="#33333a" opacity=".85"/><circle cx="58" cy="19" r="8" fill="#fff" stroke="#33333a" stroke-width="2.5"/><circle cx="60.5" cy="17.5" r="1.1" fill="#33333a"/><ellipse cx="59" cy="23" rx="4.5" ry="3" fill="#f0b9c4" stroke="#33333a" stroke-width="1.6"/><path d="M52 12 q-2-4-5-3 M64 12 q2-4 5-3" fill="none" stroke="#33333a" stroke-width="2" stroke-linecap="round"/><path d="M23 33 v8 M31 33 v8 M41 33 v8 M49 33 v8" stroke="#33333a" stroke-width="3" stroke-linecap="round"/><path d="M18 24 q-5 1-4 7" fill="none" stroke="#33333a" stroke-width="2.2" stroke-linecap="round"/></svg>`,
+hevonen:`<svg viewBox="0 0 80 48" aria-hidden="true"><rect x="20" y="18" width="30" height="14" rx="7" fill="#a97142" stroke="#33333a" stroke-width="2.5"/><path d="M48 22 q3-9 10-11 l4 6 q-1 6-8 8" fill="#a97142" stroke="#33333a" stroke-width="2.5" stroke-linejoin="round"/><path d="M50 11 q2 6-1 10" fill="none" stroke="#33333a" stroke-width="2.4" stroke-linecap="round"/><circle cx="57.5" cy="16" r="1" fill="#33333a"/><path d="M24 32 v9 M32 32 v9 M40 32 v9 M47 32 v9" stroke="#33333a" stroke-width="3" stroke-linecap="round"/><path d="M20 22 q-6 2-4 10" fill="none" stroke="#6b4226" stroke-width="3" stroke-linecap="round"/></svg>`,
+juna:`<svg viewBox="0 0 80 48" aria-hidden="true"><rect x="6" y="14" width="30" height="18" rx="4" fill="#CB043E" stroke="#33333a" stroke-width="2.5"/><rect x="11" y="18" width="8" height="7" rx="1.5" fill="#bfe3f7" stroke="#33333a" stroke-width="1.6"/><rect x="23" y="18" width="8" height="7" rx="1.5" fill="#bfe3f7" stroke="#33333a" stroke-width="1.6"/><rect x="40" y="17" width="26" height="15" rx="3" fill="#8a8a92" stroke="#33333a" stroke-width="2.5"/><rect x="45" y="20" width="7" height="6" rx="1" fill="#bfe3f7"/><rect x="55" y="20" width="7" height="6" rx="1" fill="#bfe3f7"/><path d="M2 36 h76" stroke="#33333a" stroke-width="2.5"/><circle cx="14" cy="34" r="3.5" fill="#26262c"/><circle cx="28" cy="34" r="3.5" fill="#26262c"/><circle cx="47" cy="34" r="3.5" fill="#26262c"/><circle cx="59" cy="34" r="3.5" fill="#26262c"/></svg>`,
+silta:`<svg viewBox="0 0 80 48" aria-hidden="true"><path d="M6 18 h68" stroke="#33333a" stroke-width="4"/><path d="M12 18 q28-22 56 0" fill="none" stroke="#CB043E" stroke-width="3.5"/><path d="M22 18 v-6 M32 18 v-9 M40 18 v-10 M48 18 v-9 M58 18 v-6" stroke="#33333a" stroke-width="2"/><path d="M10 18 v8 M70 18 v8" stroke="#33333a" stroke-width="3.5"/><path d="M4 32 q6-4 12 0 t12 0 t12 0 t12 0 t12 0 t12 0" fill="none" stroke="#4aa2cc" stroke-width="3" stroke-linecap="round"/><path d="M8 40 q6-4 12 0 t12 0 t12 0 t12 0 t12 0" fill="none" stroke="#4aa2cc" stroke-width="2.4" stroke-linecap="round" opacity=".7"/></svg>`,
+asema:`<svg viewBox="0 0 80 48" aria-hidden="true"><path d="M10 12 h44 l6 6 v4 h-56 v-4 z" fill="#CB043E" stroke="#33333a" stroke-width="2.5" stroke-linejoin="round"/><rect x="14" y="22" width="4" height="20" fill="#8a8a92"/><rect x="48" y="22" width="4" height="20" fill="#8a8a92"/><rect x="26" y="24" width="14" height="18" rx="2" fill="#e8e3d6" stroke="#33333a" stroke-width="2.5"/><rect x="29" y="27" width="8" height="6" rx="1" fill="#bfe3f7" stroke="#33333a" stroke-width="1.4"/><path d="M40 30 h6 q3 0 3 3 v6" fill="none" stroke="#33333a" stroke-width="2.2" stroke-linecap="round"/><rect x="4" y="42" width="72" height="3" fill="#8a8a92"/></svg>`,
+valot:`<svg viewBox="0 0 80 48" aria-hidden="true"><rect x="33" y="4" width="14" height="30" rx="4" fill="#33333a" stroke="#26262c" stroke-width="2"/><circle cx="40" cy="10.5" r="3.6" fill="#e84a4a"/><circle cx="40" cy="19" r="3.6" fill="#f2c200"/><circle cx="40" cy="27.5" r="3.6" fill="#59c265"/><rect x="38" y="34" width="4" height="10" fill="#8a8a92"/><rect x="30" y="44" width="20" height="3" rx="1.5" fill="#8a8a92"/></svg>`,
+poliisi:`<svg viewBox="0 0 80 48" aria-hidden="true"><rect x="33" y="9" width="14" height="5" rx="2.5" fill="#2b7fc4" stroke="#33333a" stroke-width="1.8"/><circle cx="37" cy="11.5" r="1.3" fill="#fff"/><circle cx="43" cy="11.5" r="1.3" fill="#e84a4a"/><path d="M12 30 q0-7 8-8 l6-7 q2-2.5 6-2.5 h12 q4 0 6 2.5 l6 7 q10 1 10 8 v4 q0 3-3 3 h-48 q-3 0-3-3 z" fill="#fff" stroke="#33333a" stroke-width="2.5"/><path d="M28 21.5 l4-6 h7 v6 z M42 15.5 h6 q2 0 3 1.5 l3.5 4.5 h-12.5 z" fill="#bfe3f7" stroke="#33333a" stroke-width="1.8"/><rect x="12" y="28" width="56" height="5" fill="#2b7fc4"/><circle cx="24" cy="37" r="5.5" fill="#26262c" stroke="#33333a" stroke-width="2"/><circle cx="24" cy="37" r="2" fill="#c9c9cf"/><circle cx="56" cy="37" r="5.5" fill="#26262c" stroke="#33333a" stroke-width="2"/><circle cx="56" cy="37" r="2" fill="#c9c9cf"/></svg>`,
+paketti:`<svg viewBox="0 0 80 48" aria-hidden="true"><path d="M10 34 v-16 q0-4 4-4 h34 l14 8 q6 1 6 6 v6 q0 3-3 3 h-52 q-3 0-3-3 z" fill="#e8e3d6" stroke="#33333a" stroke-width="2.5" stroke-linejoin="round"/><path d="M48 15.5 l11 6.5 h-11 z" fill="#bfe3f7" stroke="#33333a" stroke-width="1.8"/><rect x="10" y="28" width="58" height="4" fill="#8a8a92"/><circle cx="24" cy="37" r="5.5" fill="#26262c" stroke="#33333a" stroke-width="2"/><circle cx="24" cy="37" r="2" fill="#c9c9cf"/><circle cx="56" cy="37" r="5.5" fill="#26262c" stroke="#33333a" stroke-width="2"/><circle cx="56" cy="37" r="2" fill="#c9c9cf"/></svg>`,
+lentokone:`<svg viewBox="0 0 80 48" aria-hidden="true"><path d="M10 26 q1-5 8-5 h38 q10 0 16 4 q-4 5-14 5 h-40 q-7 0-8-4" fill="#fff" stroke="#33333a" stroke-width="2.5" stroke-linejoin="round"/><path d="M34 22 l-8-10 h7 l10 10 M38 30 l-7 9 h7 l8-9" fill="#CB043E" stroke="#33333a" stroke-width="2.2" stroke-linejoin="round"/><path d="M14 22 l-4-6 h5 l6 6" fill="#CB043E" stroke="#33333a" stroke-width="2" stroke-linejoin="round"/><circle cx="58" cy="25" r="1.4" fill="#33333a"/><circle cx="51" cy="25" r="1.4" fill="#33333a"/><circle cx="44" cy="25" r="1.4" fill="#33333a"/></svg>`,
+vene:`<svg viewBox="0 0 80 48" aria-hidden="true"><path d="M40 6 v22" stroke="#33333a" stroke-width="2.5"/><path d="M40 8 q16 6 15 20 h-15 z" fill="#fff" stroke="#33333a" stroke-width="2.5" stroke-linejoin="round"/><path d="M37 12 q-11 6-10 16 h10 z" fill="#CB043E" stroke="#33333a" stroke-width="2.5" stroke-linejoin="round"/><path d="M20 32 h40 l-6 8 h-28 z" fill="#a97142" stroke="#33333a" stroke-width="2.5" stroke-linejoin="round"/><path d="M6 44 q6-4 12 0 t12 0 t12 0 t12 0 t12 0" fill="none" stroke="#4aa2cc" stroke-width="2.6" stroke-linecap="round"/></svg>`,
+asuntoauto:`<svg viewBox="0 0 80 48" aria-hidden="true"><path d="M8 34 v-18 q0-5 5-5 h34 l16 9 q7 1 7 7 v7 h-62 z" fill="#fff" stroke="#33333a" stroke-width="2.5" stroke-linejoin="round"/><rect x="14" y="16" width="10" height="8" rx="1.5" fill="#bfe3f7" stroke="#33333a" stroke-width="1.6"/><rect x="28" y="16" width="10" height="8" rx="1.5" fill="#bfe3f7" stroke="#33333a" stroke-width="1.6"/><path d="M47 13 l12 7 h-12 z" fill="#bfe3f7" stroke="#33333a" stroke-width="1.8"/><path d="M8 28 h62" stroke="#CB043E" stroke-width="4"/><circle cx="22" cy="37" r="5.5" fill="#26262c" stroke="#33333a" stroke-width="2"/><circle cx="22" cy="37" r="2" fill="#c9c9cf"/><circle cx="56" cy="37" r="5.5" fill="#26262c" stroke="#33333a" stroke-width="2"/><circle cx="56" cy="37" r="2" fill="#c9c9cf"/></svg>`,
+kirkko:`<svg viewBox="0 0 80 48" aria-hidden="true"><path d="M40 2 v6 M37 5 h6" stroke="#33333a" stroke-width="2" stroke-linecap="round"/><path d="M33 20 L40 9 L47 20 Z" fill="#CB043E" stroke="#33333a" stroke-width="2.2" stroke-linejoin="round"/><rect x="34.5" y="20" width="11" height="22" fill="#fff" stroke="#33333a" stroke-width="2.2"/><rect x="16" y="28" width="18.5" height="14" fill="#fff" stroke="#33333a" stroke-width="2.2"/><rect x="45.5" y="28" width="18.5" height="14" fill="#fff" stroke="#33333a" stroke-width="2.2"/><path d="M16 28 h18 l-4-6 h-10 z M46 28 h18 l-4-6 h-10 z" fill="#CB043E" stroke="#33333a" stroke-width="2" stroke-linejoin="round"/><path d="M40 26 v5 M37.5 28 h5" stroke="#33333a" stroke-width="1.6" stroke-linecap="round"/><rect x="23" y="33" width="5" height="6" rx="2" fill="#bfe3f7" stroke="#33333a" stroke-width="1.3"/><rect x="52" y="33" width="5" height="6" rx="2" fill="#bfe3f7" stroke="#33333a" stroke-width="1.3"/></svg>`,
+hirvi:`<svg viewBox="0 0 80 48" aria-hidden="true"><rect x="22" y="19" width="26" height="13" rx="6" fill="#6b4226" stroke="#33333a" stroke-width="2.5"/><path d="M44 22 q4-7 10-8 l3 5 q0 6-7 7" fill="#6b4226" stroke="#33333a" stroke-width="2.5" stroke-linejoin="round"/><path d="M50 14 q-1-6 3-9 m1 9 q2-6 7-7 m-5 7 q3-4 7-4" fill="none" stroke="#33333a" stroke-width="2.2" stroke-linecap="round"/><circle cx="53.5" cy="17.5" r="1" fill="#33333a"/><path d="M26 32 v9 M33 32 v9 M40 32 v9 M46 32 v9" stroke="#33333a" stroke-width="3" stroke-linecap="round"/><path d="M22 24 q-3 2-2 6" fill="none" stroke="#33333a" stroke-width="2.2" stroke-linecap="round"/></svg>`,
+tuulivoimala:`<svg viewBox="0 0 80 48" aria-hidden="true"><path d="M38.5 14 L41.5 14 L43 44 L37 44 Z" fill="#e8e3d6" stroke="#33333a" stroke-width="2.2" stroke-linejoin="round"/><g stroke="#33333a" stroke-width="2" fill="#fff" stroke-linejoin="round"><path d="M40 13 L43 -2 q-3-2-6 0 Z" transform="rotate(15 40 13)"/><path d="M40 13 L43 -2 q-3-2-6 0 Z" transform="rotate(135 40 13)"/><path d="M40 13 L43 -2 q-3-2-6 0 Z" transform="rotate(255 40 13)"/></g><circle cx="40" cy="13" r="3" fill="#CB043E" stroke="#33333a" stroke-width="1.8"/><path d="M28 44 h24" stroke="#7fbf6a" stroke-width="3" stroke-linecap="round"/></svg>`,
+marjakoju:`<svg viewBox="0 0 80 48" aria-hidden="true"><path d="M14 18 L40 6 L66 18 Z" fill="#CB043E" stroke="#33333a" stroke-width="2.4" stroke-linejoin="round"/><path d="M14 18 h52" stroke="#33333a" stroke-width="2.4"/><rect x="18" y="18" width="4" height="24" fill="#a97142" stroke="#33333a" stroke-width="1.8"/><rect x="58" y="18" width="4" height="24" fill="#a97142" stroke="#33333a" stroke-width="1.8"/><rect x="22" y="28" width="36" height="8" fill="#e8e3d6" stroke="#33333a" stroke-width="2.2"/><circle cx="30" cy="26" r="2.6" fill="#CB043E"/><circle cx="36" cy="25" r="2.6" fill="#CB043E"/><circle cx="43" cy="26" r="2.6" fill="#2b5fa8"/><circle cx="49" cy="25" r="2.6" fill="#CB043E"/><path d="M22 42 h36" stroke="#8a8a92" stroke-width="2.4" stroke-linecap="round"/></svg>`,
+rekka:`<svg viewBox="0 0 80 48" aria-hidden="true"><rect x="3" y="12" width="48" height="22" rx="3" fill="#8a8a92" stroke="#33333a" stroke-width="2.5"/><path d="M10 18 h34 M10 23 h34 M10 28 h34" stroke="#6f6f77" stroke-width="2"/><path d="M51 18 h13 c2 0 3 .8 4 2 l5 7 c.8 1 1 2 1 3 v4 h-23 z" fill="#2b7fc4" stroke="#33333a" stroke-width="2.5"/><path d="M54 21 h8 l4 6 h-12 z" fill="#bfe3f7" stroke="#33333a" stroke-width="1.6"/><circle cx="15" cy="37" r="5.5" fill="#26262c" stroke="#33333a" stroke-width="2"/><circle cx="15" cy="37" r="2" fill="#c9c9cf"/><circle cx="32" cy="37" r="5.5" fill="#26262c" stroke="#33333a" stroke-width="2"/><circle cx="32" cy="37" r="2" fill="#c9c9cf"/><circle cx="61" cy="37" r="5.5" fill="#26262c" stroke="#33333a" stroke-width="2"/><circle cx="61" cy="37" r="2" fill="#c9c9cf"/></svg>`,
+asuntovaunu:`<svg viewBox="0 0 80 48" aria-hidden="true"><path d="M14 34 q-6 0-6-8 q0-12 12-12 h26 q10 0 10 10 v10 z" fill="#fff" stroke="#33333a" stroke-width="2.5" stroke-linejoin="round"/><rect x="18" y="19" width="10" height="8" rx="2" fill="#bfe3f7" stroke="#33333a" stroke-width="1.6"/><rect x="34" y="19" width="10" height="8" rx="2" fill="#bfe3f7" stroke="#33333a" stroke-width="1.6"/><path d="M8 28 h48" stroke="#ff8a00" stroke-width="3.5"/><path d="M56 30 h16" stroke="#33333a" stroke-width="3" stroke-linecap="round"/><circle cx="72" cy="30" r="2.5" fill="#33333a"/><circle cx="30" cy="37" r="5.5" fill="#26262c" stroke="#33333a" stroke-width="2"/><circle cx="30" cy="37" r="2" fill="#c9c9cf"/></svg>`
+};
+
+/* ---------- spotting pools ---------- */
+const AHOLA = [
+  {special:true,id:'ahola',lbl:'AHOLAN AUTO',pts:10,svg:'ahola'},
+  {special:true,id:'lapa',lbl:'Tuulivoiman lapa',pts:8,svg:'lapa'},
+  {special:true,id:'erikois',lbl:'Erikoiskuljetus',pts:6,svg:'erikois'},
+  {special:true,id:'lautta',lbl:'Lautta',pts:6,svg:'lautta'},
+  {special:true,id:'nosturi',lbl:'Ajoneuvonosturi',pts:5,svg:'nosturi'},
+  {special:true,id:'saatto',lbl:'Saattoauto',pts:5,svg:'saatto'},
+  {special:true,id:'lavetti',lbl:'Lavetti',pts:4,svg:'lavetti'},
+  {special:true,id:'kaivinkone',lbl:'Kaivinkone kyydissä',pts:4,svg:'kaivinkone'},
+  {special:true,id:'kontti',lbl:'Konttirekka',pts:3,svg:'kontti'}
+];
+const ARKI = [
+  {id:'auto',lbl:'Punainen auto',pts:1,svg:'auto'},
+  {id:'bussi',lbl:'Linja-auto',pts:1,svg:'bussi'},
+  {id:'moto',lbl:'Moottoripyörä',pts:1,svg:'moto'},
+  {id:'pyora',lbl:'Polkupyörä',pts:1,svg:'pyora'},
+  {id:'paketti',lbl:'Pakettiauto',pts:1,svg:'paketti'},
+  {id:'rekka',lbl:'Muu rekka',pts:1,svg:'rekka'},
+  {id:'valot',lbl:'Liikennevalot',pts:1,svg:'valot'},
+  {id:'silta',lbl:'Silta',pts:1,svg:'silta'},
+  {id:'asema',lbl:'Huoltoasema',pts:1,svg:'asema'},
+  {id:'lokki',lbl:'Lokki',pts:1,svg:'lokki'},
+  {id:'kirkko',lbl:'Kirkko',pts:1,svg:'kirkko'},
+  {id:'traktori',lbl:'Traktori',pts:2,svg:'traktori'},
+  {id:'lehma',lbl:'Lehmä',pts:2,svg:'lehma'},
+  {id:'hevonen',lbl:'Hevonen',pts:2,svg:'hevonen'},
+  {id:'juna',lbl:'Juna',pts:2,svg:'juna'},
+  {id:'lentokone',lbl:'Lentokone',pts:2,svg:'lentokone'},
+  {id:'vene',lbl:'Purjevene',pts:2,svg:'vene'},
+  {id:'asuntoauto',lbl:'Asuntoauto',pts:2,svg:'asuntoauto'},
+  {id:'asuntovaunu',lbl:'Asuntovaunu',pts:2,svg:'asuntovaunu'},
+  {id:'tuulivoimala',lbl:'Tuulivoimala',pts:2,svg:'tuulivoimala'},
+  {id:'marjakoju',lbl:'Marjakoju',pts:2,svg:'marjakoju'},
+  {id:'poliisi',lbl:'Poliisiauto',pts:3,svg:'poliisi'},
+  {id:'hirvi',lbl:'Hirvi',pts:3,svg:'hirvi'}
+];
+const AVA = ['🦊','🐻','🦉','🐿️'];
+const AVACOL = ['#ffe3b3','#ffd0dd','#d6ecff','#dff2cf'];
+
+/* ---------- persistence (graceful: in-memory fallback in sandboxes) ---------- */
+const store = {
+  ok:(()=>{try{const k='__km_t';localStorage.setItem(k,'1');localStorage.removeItem(k);return true}catch(e){return false}})(),
+  save(s){if(!this.ok)return;try{localStorage.setItem('kivaa-matkalla-v2',JSON.stringify(s))}catch(e){}},
+  load(){if(!this.ok)return null;try{return JSON.parse(localStorage.getItem('kivaa-matkalla-v2'))}catch(e){return null}},
+  clear(){if(!this.ok)return;try{localStorage.removeItem('kivaa-matkalla-v2')}catch(e){}}
+};
+
+/* ---------- state ---------- */
+let state = {
+  screen:'setup', size:3, count:2, sound:true,
+  names:['','','',''],
+  players:[], cur:0
+};
+const prevScores = {}; // for number tween
+
+function persist(){ store.save(state); }
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function makeCard(size){
+  const total=size*size, n={3:3,4:5,5:6}[size];
+  const rest=shuffle(AHOLA.filter(x=>x.id!=='ahola')).slice(0,n-1);
+  const specials=[AHOLA[0],...rest];
+  const arki=shuffle(ARKI).slice(0,total-specials.length);
+  const card=shuffle([...specials,...arki]).map(x=>({...x,done:false}));
+  const arkiIdx=card.map((c,i)=>c.special?-1:i).filter(i=>i>=0);
+  card[arkiIdx[Math.floor(Math.random()*arkiIdx.length)]].turbo=true;
+  return card;
+}
+const eff=c=>c.pts*(c.turbo?2:1);
+function score(p){
+  const base=p.card.filter(c=>c.done).reduce((s,c)=>s+eff(c),0);
+  return base + (p.celebrated?p.celebrated.length:0)*5 + (p.fullDone?15:0);
+}
+function bingoLines(s){
+  const lines=[];
+  for(let r=0;r<s;r++)lines.push([...Array(s)].map((_,c)=>r*s+c));
+  for(let c=0;c<s;c++)lines.push([...Array(s)].map((_,r)=>r*s+c));
+  lines.push([...Array(s)].map((_,k)=>k*s+k));
+  lines.push([...Array(s)].map((_,k)=>k*s+(s-1-k)));
+  return lines;
+}
+
+/* ---------- DOM helpers ---------- */
+const $ = id => document.getElementById(id);
+const app = $('app'), main = $('main');
+const rMotion = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+/* ══════════════════════ SFX (WebAudio, zero assets) ══════════════════════ */
+let EL_SOUNDS=null;/*ELEVENLABS_SOUNDS*/
+const sfx=(()=>{
+  let ctx=null, keepAlive=null, unlocked=false;
+  const AC=window.AudioContext||window.webkitAudioContext;
+  // iOS: WebAudio noudattaa mykistyskytkintä. Hiljainen <audio>-looppi siirtää
+  // sivun toistokanavalle (playback), jolloin peliäänet kuuluvat kytkimestä huolimatta.
+  function unlock(){
+    if(unlocked)return; unlocked=true;
+    try{
+      keepAlive=new Audio("data:audio/wav;base64,UklGRmQGAABXQVZFZm10IBAAAAABAAEAQB8AAIA+AAACABAAZGF0YUAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+      keepAlive.loop=true; keepAlive.volume=0.01;
+      if(state.sound)keepAlive.play().catch(()=>{});
+    }catch(e){}
+    const c=ok(); if(c&&c.state==="suspended")c.resume();
+  }
+  document.addEventListener("pointerdown",unlock,{once:true,capture:true});
+  document.addEventListener("touchend",unlock,{once:true,capture:true});
+  const ok=()=>{
+    if(!state.sound||!AC)return null;
+    if(!ctx){try{ctx=new AC()}catch(e){return null}}
+    if(ctx.state==="suspended")ctx.resume();
+    return ctx;
+  };
+  const tone=(f,t0,dur,type="sine",vol=.16,slide=0)=>{
+    const c=ok();if(!c)return;
+    const o=c.createOscillator(),g=c.createGain();
+    o.type=type;o.frequency.setValueAtTime(f,c.currentTime+t0);
+    if(slide)o.frequency.exponentialRampToValueAtTime(Math.max(40,f+slide),c.currentTime+t0+dur);
+    g.gain.setValueAtTime(0,c.currentTime+t0);
+    g.gain.linearRampToValueAtTime(vol,c.currentTime+t0+.012);
+    g.gain.exponentialRampToValueAtTime(.001,c.currentTime+t0+dur);
+    o.connect(g).connect(c.destination);
+    o.start(c.currentTime+t0);o.stop(c.currentTime+t0+dur+.05);
+  };
+  // ElevenLabs-näytteet käytössä jos upotettu (ks. lisaa-aanet-elevenlabs.mjs)
+  const sample=name=>{
+    if(!state.sound||!EL_SOUNDS||!EL_SOUNDS[name])return false;
+    try{const a=new Audio(EL_SOUNDS[name]);a.volume=.9;a.play().catch(()=>{});return true}catch(e){return false}
+  };
+  return {
+    setEnabled(on){ if(!keepAlive)return; try{ on?keepAlive.play().catch(()=>{}):keepAlive.pause(); }catch(e){} },
+    speak(txt){
+      if(!state.sound||!("speechSynthesis" in window))return;
+      try{const u=new SpeechSynthesisUtterance(txt);u.lang="fi-FI";u.rate=1.05;u.pitch=1.08;u.volume=1;speechSynthesis.speak(u)}catch(e){}
+    },
+    stamp(special){ if(sample(special?"stamp2":"stamp"))return; tone(special?620:440,0,.09,"triangle",.28,special?260:140); if(special)tone(930,.07,.1,"triangle",.2); },
+    undo(){ if(sample("undo"))return; tone(300,0,.1,"sine",.16,-120); },
+    swap(){ if(sample("swap"))return; tone(500,0,.06,"square",.11); tone(700,.07,.08,"square",.11); },
+    honk(){ if(sample("honk"))return; tone(310,0,.16,"square",.26); tone(310,.22,.28,"square",.28); tone(233,.22,.28,"square",.18); },
+    fanfare(){ if(sample("fanfare"))return; [523,659,784,1047].forEach((f,i)=>tone(f,i*.11,.16,"triangle",.22)); tone(1047,.5,.3,"triangle",.19); },
+    click(){ if(sample("click"))return; tone(640,0,.045,"sine",.14); },
+    tab(){ if(sample("tab"))return; tone(480,0,.05,"triangle",.13); tone(660,.055,.06,"triangle",.13); },
+    sheet(){ if(sample("sheet"))return; tone(280,0,.16,"sine",.12,300); },
+    engine(){ if(sample("engine"))return; tone(90,0,.5,"sawtooth",.22,60); tone(135,.42,.34,"sawtooth",.18,40); tone(660,.82,.09,"triangle",.18); },
+    finish(){ if(sample("finish"))return; tone(1180,0,.14,"square",.14,-260); tone(940,.2,.2,"square",.14,-220); },
+    deal(){ if(sample("deal"))return; [420,520,640].forEach((f,i)=>tone(f,i*.07,.05,"triangle",.14)); }
+  };
+})();
+
+/* ══════════════════════ Vuorokausi & liikenne ══════════════════════ */
+const PHASES=['day','dusk','night','dawn'];
+let manualPhase=false;
+function phaseFor(hr){return hr>=21||hr<5?'night':hr<8?'dawn':hr<17?'day':'dusk'}
+function applyPhase(force){
+  if(manualPhase&&!force)return;
+  const ph=force||phaseFor(new Date().getHours());
+  if(document.body.dataset.phase!==ph)document.body.dataset.phase=ph;
+}
+function spawnOncoming(){
+  if(document.hidden||rMotion)return;
+  if(document.querySelector('.oncar'))return;
+  const hero=document.querySelector('.hero');
+  const colors=['#2b7fc4','#f2c200','#3e7d4d','#e8e3d6','#CB043E'];
+  const col=colors[Math.floor(Math.random()*colors.length)];
+  const d=document.createElement('div');d.className='oncar';
+  d.innerHTML=`<svg viewBox="0 0 52 26">
+    <path d="M46 18 q0-5-6-6 l-4-5 q-1.5-2-4.5-2 h-9 q-3 0-4.5 2 l-4 5 q-6 1-6 6 v2 q0 2 2 2 h34 q2 0 2-2 z" fill="${col}" stroke="#26262c" stroke-width="2"/>
+    <path d="M33 12 l-3-4.5 h-5 v4.5 z M22 7.5 h-4 q-1.5 0-2.3 1.2 L13.2 12 H22 z" fill="#bfe3f7" stroke="#26262c" stroke-width="1.4"/>
+    <circle class="lamp" cx="9" cy="15" r="2.4" fill="#ffe28a"/>
+    <circle cx="15" cy="21" r="4" fill="#1e1e24"/><circle cx="37" cy="21" r="4" fill="#1e1e24"/>
+  </svg>`;
+  hero.appendChild(d);
+  setTimeout(()=>d.remove(),3600);
+}
+setInterval(applyPhase,60000);
+setInterval(()=>{ // mascot glances around (curious, always alert)
+  if(rMotion||document.hidden)return;
+  const t=document.getElementById('heroTruck'); if(!t)return;
+  const lx=(Math.random()<.3?0:(Math.random()*3.4-1.7)).toFixed(1);
+  const ly=(Math.random()<.4?0:(Math.random()*2.2-1.3)).toFixed(1);
+  t.style.setProperty('--lx',lx+'px');
+  t.style.setProperty('--ly',ly+'px');
+},3100);
+setInterval(()=>{ if(Math.random()<.45) spawnOncoming(); },7000);
+
+/* ══════════════════════ UI ══════════════════════ */
+const ui = {
+
+/* ---------- SETUP ---------- */
+setup(){
+  state.screen='setup'; app.classList.remove('ingame'); persist();
+  const hasGame = state.players.length>0;
+  let rows='';
+  for(let i=0;i<4;i++){
+    rows+=`<div class="prow ${i>=state.count?'off':''}">
+      <div class="avatar" style="background:${AVACOL[i]}">${AVA[i]}</div>
+      <input type="text" value="${esc(state.names[i]||'')}" placeholder="Pelaaja ${i+1}"
+        maxlength="14" autocomplete="off" enterkeyhint="done"
+        aria-label="Pelaajan ${i+1} nimi"
+        oninput="state.names[${i}]=this.value;persist()" ${i>=state.count?'disabled':''}>
+    </div>`;
+  }
+  main.innerHTML=`<div class="screen">
+    <h2 class="h-sec">Pelaajat</h2>
+    <div class="segc" style="grid-template-columns:repeat(4,1fr)" role="group" aria-label="Pelaajien määrä">
+      <div class="thumb" style="width:calc(25% - 1.5px);transform:translateX(${(state.count-1)*100}%)"></div>
+      ${[1,2,3,4].map(n=>`<button type="button" aria-pressed="${state.count===n}" onclick="ui.setCount(${n})">${n}</button>`).join('')}
+    </div>
+    <div class="players">${rows}</div>
+    <h2 class="h-sec">Vaikeustaso</h2>
+    <div class="segc" style="grid-template-columns:repeat(3,1fr)" role="group" aria-label="Vaikeustaso">
+      <div class="thumb" style="width:calc(33.333% - 2px);transform:translateX(${(state.size-3)*100}%)"></div>
+      <button type="button" aria-pressed="${state.size===3}" onclick="ui.setSize(3)">Helppo<span class="small">3 × 3</span></button>
+      <button type="button" aria-pressed="${state.size===4}" onclick="ui.setSize(4)">Haastava<span class="small">4 × 4</span></button>
+      <button type="button" aria-pressed="${state.size===5}" onclick="ui.setSize(5)">Pro<span class="small">5 × 5</span></button>
+    </div>
+    <button type="button" class="go" onclick="ui.start()">🚚&nbsp; Lähdetään!</button>
+    ${hasGame?`<button type="button" class="resume" onclick="ui.resume()">↩︎ Jatka edellistä peliä</button>`:''}
+    <p class="hint">Kun näet jonkin ruudun ikkunasta, <b>napauta sitä</b> – ruutuun lyödään leima. Täysi rivi tuo <b>BINGON</b> ja täysi kortti isot juhlat. Punaiset ★-ruudut ovat Aholan erikoiskuljetuksia ja tuovat eniten pisteitä!</p>
+  </div>`;
+},
+setCount(n){state.count=n;persist();sfx.click();this.setup();},
+setSize(s){state.size=s;persist();sfx.click();this.setup();},
+
+start(){
+  sfx.engine(); sfx.speak('Lähdetään!');
+  state.players=[];
+  for(let i=0;i<state.count;i++){
+    state.players.push({
+      name:(state.names[i]||`Pelaaja ${i+1}`).trim()||`Pelaaja ${i+1}`,
+      ava:AVA[i],avc:AVACOL[i],
+      card:makeCard(state.size),
+      celebrated:[],fullDone:false,swapsLeft:3
+    });
+  }
+  state.cur=0; this.game();
+},
+resume(){ if(state.players.length){ sfx.click(); this.game(); } },
+
+/* ---------- GAME ---------- */
+swapMode:false,
+game(justIdx=-1,swappedIdx=-1){
+  state.screen='game'; app.classList.add('ingame'); persist();
+  const p=state.players[state.cur];
+  const doneN=p.card.filter(c=>c.done).length, tot=p.card.length;
+  const tabs = state.players.length>1 ? `<div class="tabs" role="tablist" aria-label="Pelaajat">${
+    state.players.map((pl,i)=>`
+      <button type="button" class="tab" role="tab" aria-pressed="${i===state.cur}" onclick="ui.switchP(${i})">
+        <span class="em" style="background:${pl.avc}">${pl.ava}</span>${esc(pl.name)}
+        <span class="pts">${score(pl)}p</span></button>`).join('')
+  }</div>` : '';
+  const swaphint = this.swapMode ? `<div class="swaphint" role="status">
+      🔁 Napauta ruutua, jonka haluat vaihtaa
+      <button type="button" onclick="ui.toggleSwap()">Peruuta</button>
+    </div>` : '';
+  const cells=p.card.map((c,i)=>{
+    const inner=c.svg?SVGS[c.svg]:`<div class="ico">${c.ico}</div>`;
+    const swapCls=this.swapMode?(c.done?'locked':'swappable'):'';
+    const rot=(-9-(i*7)%11).toFixed(0);
+    return `<button type="button" class="cell ${c.special?'starred':''} ${c.done?'done':''} ${i===justIdx?'justdone':''} ${i===swappedIdx?'swapin':''} ${swapCls}"
+      onclick="ui.tap(${i})" aria-pressed="${c.done}"
+      aria-label="${esc(c.lbl)}, ${eff(c)} pistettä${c.turbo?', tuplaruutu':''}${c.done?', bongattu':''}${this.swapMode&&!c.done?', vaihdettavissa':''}">
+      <span class="badge">${eff(c)}p</span>${c.turbo?'<span class="turbo">⚡×2</span>':''}${inner}
+      <span class="lbl">${esc(c.lbl)}</span>
+      <span class="stamp" style="--rot:${rot}deg"><span>BONGATTU</span></span>
+    </button>`;
+  }).join('');
+  main.innerHTML=`<div class="screen">
+    ${tabs}
+    <div class="scorebar">
+      <div class="who">${p.ava} ${esc(p.name)}</div>
+      <div class="pt"><span id="scoreNum">${prevScores[state.cur]??score(p)}</span> <small>pistettä</small></div>
+    </div>
+    <div class="progress" role="progressbar" aria-valuenow="${doneN}" aria-valuemax="${tot}" aria-label="Kortin edistyminen">
+      <div class="fill" style="width:${doneN/tot*100}%"></div>
+    </div>
+    ${swaphint}
+    <div class="grid cols-${state.size}" style="grid-template-columns:repeat(${state.size},1fr)">${cells}</div>
+  </div>`;
+  this.syncSwapBtn(p);
+  this.syncSound();
+  this.tweenScore(state.cur, score(p));
+},
+syncSwapBtn(p){
+  const b=$('swapBtn'); if(!b)return;
+  b.classList.toggle('on',this.swapMode);
+  $('swapCount').textContent=p.swapsLeft;
+  b.disabled = p.swapsLeft<=0;
+  b.style.opacity = p.swapsLeft<=0 ? .38 : 1;
+},
+switchP(i){ prevScores[i]=score(state.players[i]); state.cur=i; this.swapMode=false; sfx.tab(); this.game(); },
+
+/* ---------- single-tile swap ---------- */
+toggleSwap(){
+  const p=state.players[state.cur];
+  if(!this.swapMode && p.swapsLeft<=0){ this.toast('Vaihdot käytetty tältä kortilta'); return; }
+  this.swapMode=!this.swapMode;
+  sfx.click();
+  this.game();
+},
+doSwap(i){
+  const p=state.players[state.cur], c=p.card[i];
+  if(c.done){ this.toast('Bongattua ruutua ei voi vaihtaa'); return; }
+  const onCard=new Set(p.card.map(x=>x.id));
+  const pool=(c.special?AHOLA:ARKI).filter(x=>!onCard.has(x.id));
+  if(!pool.length){ this.toast('Ei vaihdettavaa jäljellä'); this.swapMode=false; this.game(); return; }
+  const next=pool[Math.floor(Math.random()*pool.length)];
+  p.card[i]={...next,done:false,turbo:c.turbo};
+  p.swapsLeft--;
+  this.swapMode=false;
+  if(navigator.vibrate)navigator.vibrate(18);
+  sfx.swap();
+  this.game(-1,i);
+  this.toast(`🔁 ${c.lbl} → ${next.lbl} · ${p.swapsLeft} ${p.swapsLeft===1?'vaihto':'vaihtoa'} jäljellä`);
+  persist();
+},
+
+tap(i){
+  if(this.swapMode){ this.doSwap(i); return; }
+  const p=state.players[state.cur], c=p.card[i];
+  prevScores[state.cur]=score(p);
+  c.done=!c.done;
+  if(navigator.vibrate) navigator.vibrate(c.done?24:10);
+  this.game(c.done?i:-1);
+  if(!c.done){ this.toast('↩︎ Peruttu'); sfx.undo(); persist(); return; }
+  const pts=eff(c);
+  this.flyup(i, '+'+pts+' p', c.special||c.turbo);
+  if(c.id==='ahola'){ this.toast('🚚 AHOLAN AUTO! +10 p','gold'); this.honk(); sfx.speak('Aholan auto!'); }
+  else if(c.special){ this.toast(`★ ${c.lbl}! +${pts} p`,'gold'); sfx.stamp(true); }
+  else if(c.turbo){ this.toast(`⚡ TUPLA! ${c.lbl} +${pts} p`,'gold'); sfx.stamp(true); }
+  else { this.toast(`✓ ${c.lbl} +${pts} p`); sfx.stamp(false); }
+  this.checkAchievements(p);
+  persist();
+},
+
+flyup(i,text,gold){
+  const cell=main.querySelectorAll('.grid .cell')[i];
+  if(!cell)return;
+  const cr=cell.getBoundingClientRect(), ar=app.getBoundingClientRect();
+  const el=document.createElement('div');
+  el.className='flyup'+(gold?' gold':'');
+  el.textContent=text;
+  el.style.left=(cr.left-ar.left+cr.width/2-16)+'px';
+  el.style.top=(cr.top-ar.top+6)+'px';
+  app.appendChild(el);
+  setTimeout(()=>el.remove(),1050);
+},
+
+checkAchievements(p){
+  const lines=bingoLines(state.size);
+  const newCells=new Set(); let newLines=0;
+  lines.forEach((l,idx)=>{
+    if(!p.celebrated.includes(idx) && l.every(k=>p.card[k].done)){
+      p.celebrated.push(idx); newLines++;
+      l.forEach(k=>newCells.add(k));
+    }
+  });
+  const full=p.card.every(c=>c.done);
+  if(full && !p.fullDone) p.fullDone=true;
+  if(newCells.size){
+    const cells=main.querySelectorAll('.grid .cell');
+    newCells.forEach(k=>cells[k]&&cells[k].classList.add('lineflash'));
+  }
+  this.tweenScore(state.cur, score(p)); // include fresh bonuses
+  if(full){
+    sfx.fanfare(); sfx.speak("Täysi kortti! Mahtavaa!");
+    setTimeout(()=>this.banner('TÄYSI KORTTI!',`${p.name} bongasi kaiken – huikeat ${score(p)} pistettä (sis. +15 p bonus)! 🏆`),750);
+  } else if(newLines){
+    sfx.fanfare(); sfx.speak("Bingo!");
+    const b=newLines*5;
+    setTimeout(()=>this.banner(newLines>1?newLines+'× BINGO!':'BINGO!',`${p.name} sai ${newLines>1?newLines+' riviä':'rivin'} täyteen – +${b} bonuspistettä! Keräätkö vielä koko kortin?`),750);
+  }
+},
+
+/* ---------- RESULTS ---------- */
+results(){
+  if(state.screen!=='results')sfx.finish();
+  state.screen='results'; this.swapMode=false; app.classList.remove('ingame'); persist();
+  const ranked=state.players.map((p,i)=>({p,i,s:score(p)})).sort((a,b)=>b.s-a.s);
+  const medals=['🥇','🥈','🥉','·'];
+  const single=state.players.length===1;
+  const winner=ranked[0];
+  const cards=ranked.map((r,rank)=>{
+    const done=r.p.card.filter(c=>c.done).length;
+    return `<div class="pcard ${rank===0&&!single?'winner':''}">
+      <span class="medal">${single?'🏁':medals[rank]}</span>
+      <div class="pinfo">
+        <div class="pname"><span class="avatar" style="width:26px;height:26px;font-size:13px;background:${r.p.avc}">${r.p.ava}</span>${esc(r.p.name)}</div>
+        <div class="pstats">${done}/${r.p.card.length} bongausta · ${r.p.celebrated.length} bingoa${r.p.fullDone?' · täysi kortti 🏆':''}</div>
+      </div>
+      <div class="pscore">${r.s}<br><small>pistettä</small></div>
+    </div>`;
+  }).join('');
+  main.innerHTML=`<div class="screen">
+    <h2 class="res-title">Matkan tulokset</h2>
+    <p class="res-sub">${single?`hienoa bongailua, ${esc(winner.p.name)}!`:`onnea, ${esc(winner.p.name)}! 🎉`}</p>
+    <div class="podium">${cards}</div>
+    <div class="res-actions">
+      <button type="button" class="btn-sec red" onclick="ui.rematch()">🔄 Sama porukka, uudet kortit</button>
+      <button type="button" class="btn-sec" onclick="ui.resume()">↩︎ Takaisin peliin</button>
+      <button type="button" class="btn-sec ghost" onclick="ui.reset()">⚙️ Uusi peli alusta</button>
+    </div>
+  </div>`;
+  if(!single && !rMotion) this.confetti(40);
+},
+rematch(){
+  state.players.forEach(p=>{p.card=makeCard(state.size);p.celebrated=[];p.fullDone=false;p.swapsLeft=3;});
+  Object.keys(prevScores).forEach(k=>prevScores[k]=0);
+  state.cur=0; this.swapMode=false; sfx.deal(); this.game(); this.toast('🃏 Uudet kortit jaettu!');
+},
+reset(){ state.players=[]; state.cur=0; store.clear(); this.setup(); },
+
+/* ---------- micro-interactions ---------- */
+tweenScore(pi,target){
+  const el=$('scoreNum'); if(!el)return;
+  const from=prevScores[pi]??target; prevScores[pi]=target;
+  if(from===target||rMotion){el.textContent=target;return;}
+  const t0=performance.now(),dur=380;
+  const step=t=>{
+    const k=Math.min(1,(t-t0)/dur), e=1-Math.pow(1-k,3);
+    el.textContent=Math.round(from+(target-from)*e);
+    if(k<1)requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+},
+honk(){
+  const t=$('heroTruck');
+  t.classList.add('boost');
+  sfx.honk();
+  if(!rMotion){
+    const tr=t.getBoundingClientRect(), hr=t.parentElement.getBoundingClientRect();
+    for(let i=0;i<3;i++)setTimeout(()=>{
+      const p=document.createElement('div');p.className='puff';
+      p.style.left=(tr.left-hr.left+tr.width*.905)+'px';
+      p.style.top=(tr.top-hr.top+10)+'px';
+      t.parentElement.appendChild(p);setTimeout(()=>p.remove(),1150);
+    },i*180);
+  }
+  setTimeout(()=>t.classList.remove('boost'),1900);
+},
+toggleSound(){
+  state.sound=!state.sound; persist(); this.syncSound(); sfx.setEnabled(state.sound);
+  this.toast(state.sound?'🔊 Äänet päällä':'🔇 Äänet pois');
+  if(state.sound)sfx.stamp(false);
+},
+syncSound(){
+  const b=$('soundBtn');if(!b)return;
+  $('soundIco').textContent=state.sound?'🔊':'🔇';
+  b.setAttribute('aria-pressed',state.sound);
+  b.style.opacity=state.sound?1:.55;
+},
+cyclePhase(){
+  manualPhase=true;
+  const cur=document.body.dataset.phase||'day';
+  const next=PHASES[(PHASES.indexOf(cur)+1)%PHASES.length];
+  applyPhase(next);
+  const names={day:'☀️ Päivä',dusk:'🌇 Ilta-aurinko',night:'🌙 Yöajo',dawn:'🌅 Aamu'};
+  sfx.click();
+  this.toast(names[next]);
+},
+
+_tT:null,
+toast(msg,cls=''){
+  const t=$('toast');
+  t.textContent=msg; t.className='toast show '+cls;
+  clearTimeout(this._tT);
+  this._tT=setTimeout(()=>t.classList.remove('show'),1650);
+},
+banner(big,txt){
+  $('bannerBig').textContent=big;
+  $('bannerTxt').textContent=txt;
+  $('banner').classList.add('show');
+  if(navigator.vibrate)navigator.vibrate([60,40,60]);
+  if(!rMotion)this.confetti(70);
+},
+closeBanner(){sfx.click();$('banner').classList.remove('show');},
+openRules(){sfx.sheet();$('sheetWrap').classList.add('show');},
+closeRules(){sfx.click();$('sheetWrap').classList.remove('show');},
+confetti(n){
+  if(!('animate' in Element.prototype))return;
+  const cols=['#CB043E','#f2c200','#4aa2cc','#7fbf6a','#fff','#ff8a00'];
+  for(let i=0;i<n;i++){
+    const d=document.createElement('div');d.className='confetti';
+    d.style.left=Math.random()*100+'%';
+    d.style.background=cols[i%cols.length];
+    const dur=1700+Math.random()*1600;
+    d.animate(
+      [{transform:'translateY(0) rotate(0)',opacity:1},
+       {transform:`translateY(${app.clientHeight+40}px) rotate(${300+Math.random()*720}deg)`,opacity:.9}],
+      {duration:dur,easing:'cubic-bezier(.3,.4,.6,1)'});
+    app.appendChild(d);setTimeout(()=>d.remove(),dur);
+  }
+}
+};
+
+/* ---------- rules sheet: populate Ahola list ---------- */
+$('ruleAhola').innerHTML = AHOLA.map(a=>
+  `<div class="rrow">${SVGS[a.svg]}${a.lbl}<span class="rpts">${a.pts} p</span></div>`).join('');
+$('ruleArki').innerHTML = [ARKI[0],ARKI[11],ARKI[22]].map(a=>
+  `<div class="rrow">${SVGS[a.svg]}${a.lbl}<span class="rpts">${a.pts} p</span></div>`).join('')
+  + `<div class="rrow"><span class="remoji">…</span>ja ${ARKI.length-3} muuta havaintoa<span class="rpts">1–3 p</span></div>`;
+
+/* ---------- boot: restore or fresh ---------- */
+(function boot(){
+  const saved=store.load();
+  if(saved && saved.players){
+    try{
+      state={...state,...saved};
+      if(typeof state.sound!=='boolean')state.sound=true;
+      state.players.forEach((p,i)=>{p.ava=p.ava||AVA[i];p.avc=p.avc||AVACOL[i];
+        p.celebrated=p.celebrated||[];p.fullDone=!!p.fullDone;
+        p.swapsLeft=(typeof p.swapsLeft==='number')?p.swapsLeft:3;});
+      if(state.screen==='game'&&state.players.length){ui.game();return;}
+      if(state.screen==='results'&&state.players.length){ui.results();return;}
+    }catch(e){}
+  }
+  ui.setup();
+})();
+applyPhase();
+
+/* debug / automation handle */
+window.ui = ui;
+Object.defineProperty(window, 'state', { get: () => state, set: v => { state = v; } });
+
+/* keep celebration dismissible with Esc (external keyboards / desktop) */
+addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    ui.closeBanner();ui.closeRules();
+    if(ui.swapMode){ui.swapMode=false;if(state.screen==='game')ui.game();}
+  }
+});
+</script>
+</body>
+</html>
