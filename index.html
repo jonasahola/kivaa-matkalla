@@ -731,7 +731,13 @@
       .hero-meta .mood-speech,.app.ingame .hero-meta .mood-speech{font-size:8.5px;max-width:68px}
     }
     @media(max-height:720px){.hero{flex-basis:178px!important}.app.ingame .hero{flex-basis:150px!important}}
-  </style>
+  .wizard-top{display:flex;align-items:center;justify-content:space-between;margin:2px 0 4px;min-height:30px}
+.step-dots{display:flex;gap:7px;margin-left:auto}
+.step-dots .dot{width:9px;height:9px;border-radius:50%;background:#d9d3c4;transition:.2s}
+.step-dots .dot.on{background:#CB043E;transform:scale(1.25)}
+.step-dots .dot.done{background:#e5a9ba}
+.back-btn{font-weight:700}
+</style>
 </head>
 <body>
   <div class="app" id="app" data-phase="day">
@@ -1140,21 +1146,38 @@
     if(state.screen==='setup')renderSetup();else if(state.screen==='results')renderResults();else renderGame();
   }
 
+  /* ── vaiheittainen aloitus ── */
+  let setupStep=1;
+  function stepDots(active){
+    return '<div class="step-dots" aria-hidden="true">'+[1,2,3].map(i=>
+      '<span class="dot'+(i===active?' on':i<active?' done':'')+'"></span>').join('')+'</div>';
+  }
   function renderSetup(){
     state.screen='setup';swapMode=false;toolbar.hidden=true;
     const hasGame=state.players.length>0;
-    const playerFields=Array.from({length:4},(_,index)=>`
-      <label class="player-field ${index>=state.count?'is-hidden':''}">
-        <img class="avatar" src="assets/mascot-avatar.webp" alt="">
-        <input type="text" maxlength="18" autocomplete="off" enterkeyhint="done" value="${esc(state.names[index]||'')}" placeholder="Pelaaja ${index+1}" aria-label="Pelaajan ${index+1} nimi" oninput="ui.setName(${index},this.value)">
-      </label>`).join('');
-    main.innerHTML=`
-      <div class="screen">
-        <h2 class="section-title">Ketkä pelaavat?</h2>
+    let inner='';
+    if(setupStep===1){
+      inner=`
+        <h2 class="section-title">Montako pelaajaa?</h2>
         <section class="panel">
-          <div class="count-picker" role="group" aria-label="Pelaajien määrä">${[1,2,3,4].map(count=>`<button class="choice" type="button" aria-pressed="${state.count===count}" onclick="ui.setCount(${count})">${count}<small>${count===1?'pelaaja':'pelaajaa'}</small></button>`).join('')}</div>
-          <div class="players-form">${playerFields}</div>
+          <div class="count-picker" role="group" aria-label="Pelaajien määrä">${[1,2,3,4].map(count=>`<button class="choice" type="button" aria-pressed="${state.count===count}" onclick="ui.pickCount(${count})">${count}<small>${count===1?'pelaaja':'pelaajaa'}</small></button>`).join('')}</div>
         </section>
+        ${hasGame?`<div class="start-actions"><button class="secondary-btn" type="button" onclick="ui.resume()">↩ Jatka edellistä peliä</button></div>`:''}`;
+    } else if(setupStep===2){
+      const playerFields=Array.from({length:state.count},(_,index)=>`
+        <label class="player-field">
+          <img class="avatar" src="assets/mascot-avatar.webp" alt="">
+          <input type="text" maxlength="18" autocomplete="off" enterkeyhint="${index===state.count-1?'done':'next'}" value="${esc(state.names[index]||'')}" placeholder="Pelaaja ${index+1}" aria-label="Pelaajan ${index+1} nimi" oninput="ui.setName(${index},this.value)">
+        </label>`).join('');
+      inner=`
+        <h2 class="section-title">${state.count===1?'Kuka pelaa?':'Ketkä pelaavat?'}</h2>
+        <section class="panel">
+          <div class="players-form">${playerFields}</div>
+          <p class="support-copy">Nimet ovat vapaaehtoisia – tyhjä kenttä saa nimen automaattisesti.</p>
+        </section>
+        <div class="start-actions"><button class="primary-btn" type="button" onclick="ui.setupNext()">Seuraava →</button></div>`;
+    } else {
+      inner=`
         <h2 class="section-title">Kortin koko</h2>
         <section class="panel">
           <div class="size-picker" role="group" aria-label="Kortin koko">
@@ -1162,16 +1185,21 @@
             <button class="choice" type="button" aria-pressed="${state.size===4}" onclick="ui.setSize(4)">Haastava<small>4 × 4</small></button>
             <button class="choice" type="button" aria-pressed="${state.size===5}" onclick="ui.setSize(5)">Pro<small>5 × 5</small></button>
           </div>
-          <p class="support-copy">Jokaisessa kortissa on Aholan auto, erikoiskohteita ja yksi kultainen tuplakortti. Kaikki kuvat ovat nyt samaa viimeisteltyä kuvasarjaa.</p>
           <div class="target-summary"><span>${ITEMS.length} kohdetta · 7 eriväristä autoa</span><button class="link-btn" type="button" onclick="ui.showCatalog()">Katso kaikki</button></div>
         </section>
-        <div class="start-actions">
-          <button class="primary-btn" type="button" onclick="ui.start()">🚚 Lähdetään!</button>
-          ${hasGame?`<button class="secondary-btn" type="button" onclick="ui.resume()">↩ Jatka edellistä peliä</button>`:''}
+        <div class="start-actions"><button class="primary-btn" type="button" onclick="ui.start()">🚚 Lähdetään!</button></div>`;
+    }
+    main.innerHTML=`
+      <div class="screen">
+        <div class="wizard-top">
+          ${setupStep>1?'<button class="link-btn back-btn" type="button" onclick="ui.setupBack()">‹ Takaisin</button>':'<span></span>'}
+          ${stepDots(setupStep)}
         </div>
-        <p class="support-copy"><strong>Aito Ahola-pikkurekka näkyy nyt kokonaan:</strong> mikään painike tai tekstilaatikko ei peitä autoa tai punaista Ahola-tunnusta. Pilvet, puut ja tie liikkuvat edelleen eri nopeuksilla.</p>
+        ${inner}
       </div>`;
-    setMood('Bongataanko?','happy',0);saveState();syncChrome();
+    setMood(setupStep===1?'Bongataanko?':setupStep===2?'Keitä on kyydissä?':'Melkein valmista!','happy',0);
+    saveState();syncChrome();
+    if(setupStep===2){const first=main.querySelector('input');if(first&&!first.value)setTimeout(()=>{try{first.focus({preventScroll:true})}catch(e){}},350);}
   }
 
   function renderGame(justIndex=-1,swappedIndex=-1){
@@ -1240,8 +1268,11 @@
     setSize(size){state.size=size;sfx.click();renderSetup()},
     start(){
       state.players=Array.from({length:state.count},(_,index)=>({name:(state.names[index]||`Pelaaja ${index+1}`).trim()||`Pelaaja ${index+1}`,card:makeCard(state.size),celebrated:[],fullCelebrated:false,swapsLeft:3}));
-      state.current=0;state.screen='game';swapMode=false;saveState();sfx.engine();playClip('say_lahdetaan','Lähdetään!',1050);setMood('Lähdetään!','happy',1600);renderGame();
+      setupStep=1;state.current=0;state.screen='game';swapMode=false;saveState();sfx.engine();playClip('say_lahdetaan','Lähdetään!',1050);setMood('Lähdetään!','happy',1600);renderGame();
     },
+    pickCount(count){state.count=count;sfx.click();saveState();renderSetup();setTimeout(()=>{if(setupStep===1){setupStep=2;renderSetup();}},260);},
+    setupNext(){setupStep=3;sfx.click();renderSetup();},
+    setupBack(){setupStep=Math.max(1,setupStep-1);sfx.click();renderSetup();},
     resume(){if(!state.players.length)return;state.screen='game';swapMode=false;sfx.click();setMood('Jatketaan!','happy',1200);renderGame()},
     switchPlayer(index){if(index===state.current)return;state.current=index;swapMode=false;sfx.tab();setMood(`${state.players[index].name}n vuoro`,'happy',1300);renderGame()},
     toggleSwap(){
@@ -1270,6 +1301,7 @@
     },
     toggleSound(){state.sound=!state.sound;saveState();syncChrome();if(state.sound){sfx.click();showToast('Äänet päällä')}else{try{speechSynthesis.cancel()}catch(error){}showToast('Äänet mykistetty') }},
     showResults(){sfx.click();state.screen='results';renderResults()},
+    _resetWizard(){setupStep=1;},
     backToGame(){state.screen='game';sfx.click();renderGame()},
     newRound(){
       modalRoot.innerHTML=`<div class="modal-wrap" role="presentation"><section class="sheet" role="dialog" aria-modal="true" aria-labelledby="newRoundTitle"><div class="grabber"></div><div class="sheet-head"><h2 id="newRoundTitle">Arvotaanko uudet kortit?</h2><button class="close-btn" type="button" onclick="ui.closeModal()" aria-label="Sulje">×</button></div><p class="catalog-intro">Pelaajien nimet säilyvät, mutta bongaukset, pisteet ja vaihdot alkavat alusta.</p><div class="sheet-actions"><button class="primary-btn" type="button" onclick="ui.confirmNewRound()">Arvo uudet kortit</button><button class="ghost-btn" type="button" onclick="ui.closeModal()">Peruuta</button></div></section></div>`;
