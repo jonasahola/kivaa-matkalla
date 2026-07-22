@@ -1005,10 +1005,17 @@
     };
   })();
 
-  function playClip(name,fallback){
+  let voiceEl=null, voiceTimer=0;
+  function playClip(name,fallback,delayMs=0){
     if(!state.sound)return;
-    if(EL_SOUNDS&&EL_SOUNDS[name]){try{new Audio(EL_SOUNDS[name]).play().catch(()=>{})}catch(error){}}
-    else if(fallback)sfx.speak(fallback);
+    clearTimeout(voiceTimer);
+    voiceTimer=setTimeout(()=>{
+      if(!state.sound)return;
+      if(voiceEl){try{voiceEl.pause();voiceEl.currentTime=0}catch(error){}}
+      if(EL_SOUNDS&&EL_SOUNDS[name]){
+        try{voiceEl=new Audio(EL_SOUNDS[name]);voiceEl.volume=1;const p=voiceEl.play();if(p&&p.catch)p.catch(()=>{})}catch(error){}
+      } else if(fallback)sfx.speak(fallback);
+    },delayMs);
   }
 
   function setMood(text='',mode='happy',duration=1500){
@@ -1233,7 +1240,7 @@
     setSize(size){state.size=size;sfx.click();renderSetup()},
     start(){
       state.players=Array.from({length:state.count},(_,index)=>({name:(state.names[index]||`Pelaaja ${index+1}`).trim()||`Pelaaja ${index+1}`,card:makeCard(state.size),celebrated:[],fullCelebrated:false,swapsLeft:3}));
-      state.current=0;state.screen='game';swapMode=false;saveState();sfx.engine();playClip('say_lahdetaan','Lähdetään!');setMood('Lähdetään!','happy',1600);renderGame();
+      state.current=0;state.screen='game';swapMode=false;saveState();sfx.engine();playClip('say_lahdetaan','Lähdetään!',1050);setMood('Lähdetään!','happy',1600);renderGame();
     },
     resume(){if(!state.players.length)return;state.screen='game';swapMode=false;sfx.click();setMood('Jatketaan!','happy',1200);renderGame()},
     switchPlayer(index){if(index===state.current)return;state.current=index;swapMode=false;sfx.tab();setMood(`${state.players[index].name}n vuoro`,'happy',1300);renderGame()},
@@ -1254,12 +1261,12 @@
       cell.done=!cell.done;let achievement={newLines:[],newFull:false};if(cell.done)achievement=evaluateAchievements(player);saveState();renderGame(cell.done?index:-1);
       if(!cell.done){sfx.undo();setMood('Bongaus peruttu','happy',1000);showToast('↩ Bongaus peruttu');return}
       const points=effectivePoints(cell);flyPoints(index,`+${points} p`,item.special||cell.turbo);
-      if(cell.id==='ahola'){sfx.honk();setMood('Tööt tööt!','surprised',1900);showToast(`AHOLAN AUTO! +${points} p`,'gold');playClip('say_ahola','Aholan auto!')}
+      if(cell.id==='ahola'){sfx.honk();setMood('Tööt tööt!','surprised',1900);showToast(`AHOLAN AUTO! +${points} p`,'gold');playClip('say_ahola','Aholan auto!',800)}
       else if(item.special){sfx.stamp(true);setMood('Harvinainen löytö!','happy',1600);showToast(`★ ${item.label} +${points} p`,'gold')}
       else if(cell.turbo){sfx.stamp(true);setMood('Tuplapisteet!','happy',1600);showToast(`⚡ TUPLA! ${item.label} +${points} p`,'gold')}
       else{sfx.stamp(false);setMood('Hyvä bongaus!','happy',1100);showToast(`✓ ${item.label} +${points} p`)}
-      if(achievement.newFull){sfx.fanfare();playClip('say_taysi','Täysi kortti! Mahtavaa!');setTimeout(()=>showCelebration('TÄYSI KORTTI!',`${player.name} bongasi kaiken ja sai lisäksi 15 bonuspistettä!`),650)}
-      else if(achievement.newLines.length){sfx.fanfare();playClip('say_bingo','Bingo!');setTimeout(()=>showCelebration('BINGO!',`${player.name} sai ${achievement.newLines.length>1?achievement.newLines.length+' uutta riviä':'uuden rivin'} ja 5 bonuspistettä per rivi!`),550)}
+      if(achievement.newFull){sfx.fanfare();playClip('say_taysi','Täysi kortti! Mahtavaa!',1150);setTimeout(()=>showCelebration('TÄYSI KORTTI!',`${player.name} bongasi kaiken ja sai lisäksi 15 bonuspistettä!`),650)}
+      else if(achievement.newLines.length){sfx.fanfare();playClip('say_bingo','Bingo!',1150);setTimeout(()=>showCelebration('BINGO!',`${player.name} sai ${achievement.newLines.length>1?achievement.newLines.length+' uutta riviä':'uuden rivin'} ja 5 bonuspistettä per rivi!`),550)}
     },
     toggleSound(){state.sound=!state.sound;saveState();syncChrome();if(state.sound){sfx.click();showToast('Äänet päällä')}else{try{speechSynthesis.cancel()}catch(error){}showToast('Äänet mykistetty') }},
     showResults(){sfx.click();state.screen='results';renderResults()},
