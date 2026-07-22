@@ -924,6 +924,7 @@
   }
 
   let state=loadState();
+  state.screen='setup'; // käynnistys aina alkuun – kesken jäänyt peli jatkuu "Jatka edellistä peliä" -napista
   let swapMode=false;
   let toastTimer=0;
   let moodTimer=0;
